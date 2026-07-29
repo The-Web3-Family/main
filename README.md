@@ -1,77 +1,52 @@
-# Astro Starter Kit: Blog
+# The Web3 Family
 
-```sh
-npm create astro@latest -- --template blog
+The marketing site for The Web3 Family (Clarke Tech Solutions, Inglewood, California).
+
+One page, one job: get the right visitor to request a free Digital Intelligence Briefing.
+
+**Read `CLAUDE.md` before changing anything.** It holds the audience, the copy rules,
+the locked copy, the brand tokens, the verified contrast ratios, and the accessibility
+floor. Those are project rules, not suggestions.
+
+## Structure
+
+```
+src/pages/index.astro   the entire site: markup and styles in one file
+public/                 static assets served at the site root
 ```
 
-<!-- ASTRO:REMOVE:START -->
+There is one page and one file. If it grows past roughly 800 lines, ask before splitting.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+## Running it
 
-<!-- ASTRO:REMOVE:END -->
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-<!-- ASTRO:REMOVE:START -->
-
-![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
-
-<!-- ASTRO:REMOVE:END -->
-
-Features:
-
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and Open Graph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+```
+npm install
+npm run dev       # local preview at localhost:4321
+npm run build     # static output into dist/
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Deploying
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Cloudflare Pages builds from `main` automatically.
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+- Build command: `npm run build`
+- Output directory: `dist`
 
-Any static assets, like images, can be placed in the `public/` directory.
+Live in under a minute. If something breaks, roll back to the previous deployment in
+the Cloudflare Pages dashboard rather than hotfixing under pressure.
 
-## 🧞 Commands
+## Before merging
 
-All commands are run from the root of the project, from a terminal:
+Confirm all four:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+1. Reads cleanly at 375px width.
+2. All text is 18px or larger.
+3. Every color pair meets the ratios in CLAUDE.md section 5.
+4. A 68-year-old would understand every word.
 
-## 👀 Want to learn more?
+## Open slots
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Two placeholders in `index.astro` are intentional and must not be removed:
 
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+- `src="christopher.jpg"` in the hero. Drop the real photo into `public/` to fill it.
+- `<div id="booking-widget">` in the booking section. The embed goes there.
