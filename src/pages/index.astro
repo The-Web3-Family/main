@@ -1,49 +1,354 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+const title = "The Web3 Family";
+const description =
+  "Starting a nonprofit? I'll handle the technology. Flat $3,000/month, finished work every Friday.";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@600;700&display=swap"
+    />
+
+    <!-- Cloudflare Web Analytics beacon goes here. Cookieless, no consent banner. -->
+  </head>
+
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="wrap">
+        <span class="logo">The Web3 Family</span>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="wrap">
+          <p class="eyebrow">For new &amp; grassroots nonprofits</p>
+          <h1>Starting a nonprofit? I'll handle the technology.</h1>
+          <p class="subline">
+            The same AI and tools the big organizations pay millions for, working
+            for you.
+          </p>
+
+          <!-- Intentional slot. Christopher's photo goes here. Do not replace with stock. -->
+          <img
+            class="portrait"
+            src="christopher.jpg"
+            alt="Christopher Clarke, who builds the websites and digital tools for The Web3 Family."
+            width="320"
+            height="320"
+          />
+
+          <ul class="points">
+            <li>Enterprise tools, your size.</li>
+            <li>Every Friday, finished work.</li>
+            <li>Your time, protected.</li>
+          </ul>
+
+          <p class="price">Flat $3,000/month. Month to month, on your terms.</p>
+
+          <a class="cta" href="#booking">Request Your Free Briefing</a>
+          <p class="cta-sub">
+            We'll go over the findings together. 15 minutes.
+          </p>
+        </div>
+      </section>
+
+      <section id="booking">
+        <div class="wrap">
+          <h2>Request your Digital Intelligence Briefing</h2>
+          <div class="narrow">
+            <!-- Intentional slot. Booking widget embed goes here. Do not remove. -->
+            <div id="booking-widget"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <div class="wrap">
+          <h2>Questions</h2>
+          <div class="narrow">
+            <h3>Why is it called The Web3 Family?</h3>
+            <p>
+              It stands for the original promise of an open internet: public
+              records, tracked dollars, and work that's owned by the
+              organization instead of trapped in software you can't leave. It
+              has nothing to do with cryptocurrency, tokens, or blockchain. Zero
+              crypto, ever.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>
+          For the founder who built it the hard way, and wants someone solid in
+          his corner.
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>
+
+<style is:global>
+  :root {
+    --forest: #003223;
+    --orange: #fc4d00;
+    --cream: #f5ebe1;
+    --charcoal: #181c1b;
+    --cream-deep: #ede0d3;
+    --muted: #2f3d38;
+    --rust: #8f2c00;
+
+    --serif: "Lora", Georgia, serif;
+    --sans: "Inter", system-ui, sans-serif;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: var(--sans);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.62;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--serif);
+    color: var(--forest);
+    line-height: 1.25;
+    margin: 0 0 0.5em;
+  }
+
+  h1 {
+    font-size: 2.125rem;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 1.625rem;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  p {
+    margin: 0 0 1.15em;
+  }
+
+  a {
+    color: var(--forest);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--forest);
+    outline-offset: 3px;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  .narrow {
+    max-width: 36rem;
+  }
+
+  /* Section rhythm: every section below the hero carries a top border. */
+  section {
+    border-top: 1px solid var(--forest);
+    padding: 2.75rem 0;
+  }
+
+  .hero {
+    border-top: 0;
+    padding: 2rem 0 3rem;
+  }
+
+  .skip {
+    position: absolute;
+    left: -9999px;
+  }
+
+  .skip:focus {
+    left: 1rem;
+    top: 1rem;
+    z-index: 10;
+    background: var(--cream-deep);
+    color: var(--forest);
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--forest);
+  }
+
+  .site-header {
+    background: var(--forest);
+    padding: 1rem 0;
+  }
+
+  .logo {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--cream);
+  }
+
+  .eyebrow {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 0.75rem;
+  }
+
+  .subline {
+    font-size: 1.15rem;
+    color: var(--muted);
+  }
+
+  .portrait {
+    display: block;
+    width: 100%;
+    max-width: 20rem;
+    height: auto;
+    margin: 1.75rem 0;
+    border: 1px solid var(--forest);
+  }
+
+  .points {
+    list-style: none;
+    margin: 0 0 1.75rem;
+    padding: 0;
+  }
+
+  .points li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 0.85rem;
+    font-weight: 500;
+  }
+
+  .points li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--rust);
+    font-weight: 700;
+  }
+
+  .price {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--forest);
+    background: var(--cream-deep);
+    border-left: 4px solid var(--forest);
+    padding: 1rem 1.15rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Charcoal on orange is 5.08:1. Never white. The forest border carries the
+     non-text contrast, because orange on cream is only 2.88:1. */
+  .cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 56px;
+    padding: 1rem 1.5rem;
+    background: var(--orange);
+    color: var(--charcoal);
+    border: 2px solid var(--forest);
+    font-family: var(--sans);
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .cta-sub {
+    font-size: 18px;
+    color: var(--muted);
+    margin-top: 0.85rem;
+  }
+
+  #booking-widget {
+    min-height: 4rem;
+  }
+
+  .site-footer {
+    border-top: 1px solid var(--forest);
+    background: var(--cream-deep);
+    padding: 2.25rem 0;
+  }
+
+  .site-footer p {
+    font-size: 18px;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  @media (min-width: 40rem) {
+    h1 {
+      font-size: 2.75rem;
+    }
+
+    h2 {
+      font-size: 1.875rem;
+    }
+
+    .hero {
+      padding: 3rem 0 4rem;
+    }
+
+    section {
+      padding: 3.5rem 0;
+    }
+
+    .cta {
+      display: inline-flex;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+</style>
