@@ -1,216 +1,227 @@
-# CLAUDE.md — The Web3 Family
+# CLAUDE.md
 
-Read this fully before making any change. These are project rules, not suggestions. When a request conflicts with a rule here, say so and ask before proceeding.
-
----
-
-## 1. What this project is
-
-A single-page marketing website for **The Web3 Family** (operating entity: Clarke Tech Solutions, Inglewood, California). Principal and sole operator: **Christopher Clarke**.
-
-The business: Christopher is the technical right hand for people starting new and grassroots nonprofits. He researches their organization and funding landscape, hands them the findings for free, then builds their website, donation pages, and digital assets for a flat $3,000/month, delivering finished work every Friday.
-
-The site has exactly one job: get the right visitor to request a free **Digital Intelligence Briefing**. Every change should make that easier, clearer, or more legible. Nothing else.
-
-**Live domain:** theweb3family.com
-**Hosting:** Cloudflare Pages, deploying automatically from this repo's main branch.
+Project instructions for theweb3family.com. Read this fully before changing anything. These are rules, not suggestions. If a request conflicts with something here, say so and ask before proceeding.
 
 ---
 
-## 2. Who reads this site
+## 1. The project
 
-This is the single most important thing to internalize, because it invalidates most default web-design instincts.
+A single page marketing site for **The Web3 Family**, operated by **Christopher Clarke** in Inglewood, California.
 
-**The reader is a founder aged roughly 60 to 75.** Usually a man. He spent thirty or forty years building a career somewhere else — trades, ministry, education, law enforcement, corporate, military, medicine — and is now starting a grassroots nonprofit. He is retired or semi-retired with stable income. The organization is pre-launch to about three years old, often with no paid staff.
+The business: Christopher handles the technology for people starting nonprofits. He researches their organization and funding landscape, hands them the findings for free, then builds their website, donation pages, and digital assets for a flat $3,000 a month, delivering finished work every Friday.
+
+The page has exactly one job: get the right visitor to request the free Briefing. Every change should make that easier, clearer, or more legible.
+
+**Hosting:** Vercel, deploying automatically from this repo's main branch.
+**Files:** `index.html` is the whole site. One file, no build step.
+
+---
+
+## 2. Who reads this page
+
+This is the most important section, because it invalidates most default web design instincts.
+
+**A founder aged roughly 60 to 75.** Usually a man. He spent thirty or forty years building a career somewhere else, in trades, ministry, education, law enforcement, corporate work, the military, or medicine. He recently started a grassroots nonprofit. He is retired or semi retired with stable income. The organization is pre launch to about three years old, often with no paid staff.
 
 He is not a beginner at anything except the internet.
 
-What he wants: to be findable, to be taken seriously by funders, to stop losing weeks to tools and vendors he doesn't understand, to not be sold something he can't evaluate, and to leave behind something that outlasts him.
+**He reads on a phone**, top to bottom, in order, without skipping ahead. He will not scan for the price, so anything buried reads as hidden.
 
-**His currency is time.** Money arrives reliably; years do not.
+**He decides alone.** No board vote, no procurement, no RFP.
 
-**He decides alone.** No procurement committee, no board vote, no RFP. Usually at a kitchen table, sometimes with a spouse.
+**His currency is time.** Money arrives reliably. Years do not.
 
-**He is reading on a phone.** Assume a small screen and imperfect eyesight as the default case, not the edge case.
-
-### What he is NOT
-
-Not stupid, not fragile, not a charity case. He built more in his life than most people who will condescend to him about technology. Copy fails the instant it treats him as *behind* rather than *new*.
-
-He does not care about: procurement thresholds, RFP exemptions, agency comparisons, growth-marketing language, or being told what he's doing wrong.
+**What he is not:** stupid, fragile, or a charity case. He built more in his life than most people who will condescend to him about technology. The page fails the moment it treats him as behind rather than new.
 
 ---
 
-## 3. Copy rules
+## 3. Design direction
 
-The plain-spoken voice **is** the positioning. Do not "punch up," "polish," or "make it more compelling." Every adjective added drifts it toward agency-speak, which is the exact failure this site was rebuilt to escape.
+The page should feel like a well made letter from a competent person. Editorial and printed, not startup. Someone who makes things for a living made this page, and it should show, quietly.
 
-### Never use these words or framings
+**Do:**
+- Generous whitespace. Let sections breathe. Crowding reads as cheap.
+- Real size contrast between headline and body. A headline should feel like a headline.
+- Left aligned text everywhere. Centered body copy is harder to track for aging eyes.
+- Thin horizontal rules between sections. Structure by division, not by boxes everywhere.
+- Warm paper background with near black text. It should feel like good stock, not a screen.
+- One accent color, used rarely. When orange appears, it means act.
+- Vertical rhythm that repeats. Consistent spacing above and below every section.
+- Lora for headings, Inter for body. Two typefaces, no more.
+- The portrait is the only photograph on the page. It carries all the human weight.
 
-- **"Web3" in any headline or prominent position.** It reads as crypto to this audience. The name stays in the logo and the FAQ answer only.
-- **Jargon:** fractional CTO, tech debt, technical debt, full-stack, optimization, conversion, funnel, scale, leverage (as a verb), synergy, solutions, seamless, robust, cutting-edge, digital transformation.
-- **Age labels:** "second act," "senior," "older," "silver," "boomer," "retiree." He should recognize himself, never be labeled.
-- **Negative framing about his current setup:** "your site is broken," "stop leaking donations," "outdated," "you're losing money." Any tension belongs on the *internet* as the problem, never on him.
-- **Agency comparisons:** "unlike traditional agencies," "without 6-month delays," "agency prices." He was never going to hire an agency.
-- **Compliance/procurement language:** micro-purchase threshold, 2 CFR 200, single-signature authority, board approval, RFP. He has no board. (This material exists for a separate business track — see §9 — and must never appear on this site.)
-- **"Bypass," "workaround," "get around"** anything.
-- **Em dashes.** Christopher dislikes them. Use periods, commas, or colons.
-- Pressure tactics of any kind: countdown timers, scarcity claims that aren't true, "limited spots," "book now before."
+**Do not:**
+- Gradients, glassmorphism, blurred backgrounds, or heavy drop shadows.
+- Icon sets. Checkmarks and numbers only.
+- Stock photography of any kind. It destroys trust with this reader faster than bad copy.
+- Animation on scroll, parallax, or anything that moves while reading.
+- Cards inside cards, or boxes around everything.
+- Dark mode. The warm background is the brand.
+- Full width text. Cap line length around 62 characters.
 
-### Always do these
+The test: would this look out of place printed and handed to someone? If yes, reconsider.
 
+---
+
+## 4. Voice and copy rules
+
+The plain spoken voice is the positioning. Do not punch it up, polish it, or make it more compelling. Every adjective added drifts it toward agency speak, which is the failure this site was rebuilt to escape.
+
+**Never use:**
+- The word "Web3" in a headline or above the fold. It reads as crypto to this reader. It stays in the logo, the company name, and the FAQ answer.
+- Jargon: fractional CTO, tech debt, full stack, optimization, conversion, funnel, scale, leverage as a verb, synergy, solutions, seamless, robust, cutting edge, digital transformation, impact assets.
+- Age labels: second act, senior, older, silver, boomer, retiree. He should recognize himself, never be labeled.
+- Negative framing about his current setup: your site is broken, stop leaking donations, outdated, you are losing money. Any tension belongs on the internet as the problem, never on him.
+- Agency comparisons: unlike traditional agencies, without six month delays, agency prices. He was never going to hire an agency.
+- Compliance and procurement language: micro purchase threshold, 2 CFR 200, single signature authority, board approval, RFP. He has no board.
+- Bypass, workaround, or get around anything.
+- Em dashes. Use periods, commas, or colons.
+- Pressure tactics: countdown timers, false scarcity, limited spots, book now before.
+
+**Always:**
 - Short sentences. Plain words. One idea per sentence.
-- Specifics over cleverness. Being clear beats being memorable.
-- Active voice. A button says exactly what happens when it's tapped.
-- "You decide, I build" — the reader is always in control.
-- First person singular. Christopher is one person, not a team. Never "we," "our team," "us."
-- Respect his experience explicitly where natural ("you spent a career building something").
-- Sentence case for buttons and labels, not Title Case or ALL CAPS (except the one eyebrow label).
+- Specifics over cleverness. Clear beats memorable.
+- Active voice. A button says exactly what happens when it is tapped.
+- First person singular. Christopher is one person, not a team. Never "we" or "our team".
+- Respect his experience where it is natural. "You spent a career building something."
+- Sentence case for buttons and labels.
 
-### Reading-level check
-
-Before committing any copy change, read it aloud imagining a 68-year-old hearing it. If any word would make him pause, replace it. If a sentence needs a second read, split it.
+**The read aloud test:** before any copy change ships, read it aloud imagining a 68 year old hearing it. If a word makes him pause, replace it. If a sentence needs a second read, split it.
 
 ---
 
-## 4. Locked copy
+## 5. Page structure
 
-Do not change these without an explicit request from Christopher. If a design change would require altering them, ask first.
+The order is the argument. Do not reorder blocks without asking.
 
-- **Eyebrow:** For new & grassroots nonprofits
-- **Headline:** Starting a nonprofit? I'll handle the technology.
-- **Subline:** The same AI and tools the big organizations pay millions for, working for you.
-- **Three checkmark bullets:** Enterprise tools, your size. / Every Friday, finished work. / Your time, protected.
-- **Price line:** Flat $3,000/month. Month to month, on your terms.
-- **CTA button:** Request Your Free Briefing — with subtext "We'll go over the findings together. 15 minutes."
-- **Footer:** For the founder who built it the hard way, and wants someone solid in his corner.
+1. Header. Logo only. No navigation, no social links. Nothing leaves this page except the phone number.
+2. Portrait, name, and city. Before any claim. For this reader a real photo of a real person is the largest trust signal on the page.
+3. Headline: **You did the hard part. I'll handle the internet.**
+4. Subhead naming what he gets.
+5. First action: booking button plus phone button, then a short reassurance line.
+6. The problem, in his words. He will not believe you can help until he believes you understand.
+7. What Christopher does. Three promises.
+8. The price, plainly. Do not bury it. Missing pricing reads as a trap to this reader.
+9. How it works. Four steps, numbered because they happen in order.
+10. Proof. Currently a comment in the code. See section 8.
+11. What is in the free Briefing. Four cards.
+12. Straight answers. The FAQ, which handles his last objections.
+13. Last action. Booking widget and phone number.
+14. Footer. One line.
 
-### Naming consistency
+**Locked copy.** Do not change the headline, the three promises, the price line, the button text, or the footer line without an explicit request from Christopher.
 
-The free research deliverable is called the **Digital Intelligence Briefing** (short form: "the Briefing"). It has exactly one name across the site, the booking widget, emails, and every document. Never introduce a second name for it — no "Reality Check," no "audit," no "assessment," no "Pre-Call Review." The mechanism's name is a brand asset; consistency is the whole point.
-
-### The Web3 question
-
-This answer lives in the FAQ section only, never higher on the page:
-
-> It stands for the original promise of an open internet: public records, tracked dollars, and work that's owned by the organization instead of trapped in software you can't leave. It has nothing to do with cryptocurrency, tokens, or blockchain. Zero crypto, ever.
+**Naming consistency.** The free research deliverable is called the **Digital Intelligence Briefing**, short form "the Briefing". One name everywhere: site, booking widget, emails, documents. Never introduce a second name for it.
 
 ---
 
-## 5. Brand tokens
+## 6. Brand tokens
 
-Defined as CSS custom properties in `src/pages/index.astro`. Use the variables, never raw hex values, in new code.
+Defined as CSS custom properties in `index.html`. Use the variables, never raw hex, in new code.
 
 | Token | Hex | Use |
 |---|---|---|
-| `--forest` | `#003223` | Headlines, panels, logo ground, borders |
-| `--orange` | `#fc4d00` | Call-to-action background, accent rules |
+| `--forest` | `#003223` | Headings, panels, borders, logo ground |
+| `--orange` | `#fc4d00` | The call to action, accent rules |
 | `--cream` | `#f5ebe1` | Page background |
-| `--charcoal` | `#181C1B` | Body text, text on orange |
+| `--charcoal` | `#181C1B` | Body text, and text on orange |
 | `--cream-deep` | `#ede0d3` | Card and panel fills |
-| `--muted` | `#2f3d38` | Small labels, footer text |
-| `--rust` | `#8f2c00` | Eyebrow label, checkmarks |
+| `--muted` | `#2f3d38` | Small labels, footer |
 
-**Type:** Lora (serif) for headings at 600/700. Inter (sans) for body at 400/500/600/700. Loaded from Google Fonts. Do not add a third typeface.
+**Type:** Lora at 600 and 700 for headings. Inter at 400, 500, 600, 700 for body. Loaded from Google Fonts. Do not add a third typeface.
 
-### Verified contrast ratios — do not break these
+### Verified contrast ratios
 
-These were computed, not estimated. Any new color combination must be checked before it ships.
+These were computed, not estimated. Any new color pairing must be checked before it ships.
 
-| Combination | Ratio | Status |
+| Pair | Ratio | Status |
 |---|---|---|
 | Charcoal on cream | 14.62:1 | AAA |
 | Forest on cream | 12.06:1 | AAA |
-| Muted `#2f3d38` on cream | 9.67:1 | AAA |
-| Rust eyebrow `#8f2c00` on cream | 7.06:1 | AAA |
-| **Charcoal on orange** | **5.08:1** | AA — this is why button text is charcoal |
-| ~~White on orange~~ | ~~3.39:1~~ | **FAILS AA. Never use white text on the orange.** |
-| ~~Orange on cream~~ | ~~2.88:1~~ | **Fails 3:1 non-text contrast. Orange elements need a forest border.** |
+| Muted on cream | 9.67:1 | AAA |
+| Charcoal on orange | 5.08:1 | AA, which is why button text is charcoal |
+| White on orange | 3.39:1 | **Fails. Never put white text on the orange.** |
+| Orange on cream | 2.88:1 | **Fails non text contrast. Orange elements need a forest border.** |
 
 ---
 
-## 6. Accessibility requirements
+## 7. Accessibility
 
-Non-negotiable. For this audience, accessibility is not compliance theater — it is the positioning. If he has to squint, the message is that this wasn't built for him.
+Not compliance theater. For this reader it is the positioning. If he has to squint, the message is that this was not built for him.
 
-- **Body text: 20px minimum.** Never below 18px anywhere on the page, including footer, captions, button subtext, and legal lines.
-- **Line height: 1.5 minimum** for body copy. Currently 1.62.
-- **Tap targets: 48px minimum height**, 56px+ preferred for primary actions, with at least 8px of space between adjacent tappable elements.
-- **Links underlined by default**, 2px thickness, not hover-dependent.
-- **Visible keyboard focus** on every interactive element. Never remove outlines without replacing them.
-- **No low-contrast decorative text.** No light gray on cream, ever. This was a real reported failure on a previous version of this site.
-- **Respect `prefers-reduced-motion`.** Motion is minimal by design; keep it that way.
-- **Images need real alt text.**
-- Test mentally at 375px width first. Desktop is the secondary case.
-
----
-
-## 7. Technical constraints
-
-- **This is a static site built with Astro.** It compiles to plain HTML and ships zero JavaScript to the browser. Christopher chose Astro deliberately in July 2026, replacing an earlier hand-written `index.html`. Do not migrate it to another framework, and do not add React, Vue, Svelte, or Tailwind.
-- **One page, one file.** The whole site lives in `src/pages/index.astro`: markup plus a single `<style is:global>` block. No component splitting, no separate stylesheet, no layouts directory. If the file grows past roughly 800 lines, ask before splitting.
-- **No blog, no second page, no navigation.** The site is one page with one action. Anything that gives the visitor somewhere else to go works against the only job the page has.
-- **No JavaScript unless it earns its place.** The page currently needs none beyond the third-party booking embed. Do not add analytics libraries, animation libraries, sliders, or cookie banners.
-- **No `localStorage`, `sessionStorage`, or cookies.** Nothing that would require a consent banner.
-- **Dependencies:** `astro` only. Do not add npm packages or Astro integrations without asking. External runtime dependencies are Google Fonts (Lora, Inter) and the booking widget embed. That is the whole list.
-- **Analytics:** if added, Cloudflare Web Analytics only — free, cookieless, no consent banner required. A placeholder comment marks where the beacon goes.
-- **Forms:** if a contact form is ever needed, use Formspree or a Cloudflare Pages Function. No backend exists.
-- **Build:** `npm run build` outputs static files to `dist/`. That is what Cloudflare Pages serves.
+- Body text 20px. Never below 18px anywhere, including footer, captions, and button subtext.
+- Line height 1.5 minimum.
+- Tap targets 48px minimum, 56px and up for primary actions, with 8px between adjacent targets.
+- Links underlined by default at 2px thickness, not on hover only.
+- Visible keyboard focus on every interactive element.
+- No light gray on cream. This was a real reported failure on an earlier version of this site.
+- Respect `prefers-reduced-motion`.
+- Real alt text on images.
+- Design at 375px width first. Desktop is secondary.
 
 ---
 
-## 8. How to work in this repo
+## 8. Placeholders that are intentional
 
-- **Small, single-purpose changes.** One concern per commit and per PR.
-- **Never rewrite sections that weren't asked about.** If you notice something else worth fixing, mention it in the PR description instead of changing it.
-- **Say what changed and why** in plain language, not just a diff summary. Christopher reviews on a phone.
-- **Preserve the placeholders.** `src="christopher.jpg"` in the hero and the booking-widget container are intentional slots. Don't replace them with stock images or remove them.
-- **When adding a section**, match the existing rhythm: `<section>` with a top border, `.wrap` container, `h2`, and either `.narrow` prose or a `.cards` grid.
-- **Numbered lists are only for real sequences.** The "What happens" steps are numbered because they occur in order. Do not add decorative 01/02/03 markers elsewhere.
-- **Don't add sections speculatively.** No testimonials until real testimonials exist. No logo bars until there are logos to show. No statistics that haven't been verified.
-- If a request would break a rule in this file, flag it and ask rather than silently complying or silently refusing.
+Three slots in `index.html` are waiting on real material. Do not fill them with substitutes.
+
+- `src="christopher.jpg"` in the hero. Christopher's headshot goes here.
+- The phone number, currently a dummy, appears twice.
+- The booking widget container near the bottom.
+- **Block 10, proof.** Currently a comment. It stays empty until there is a real testimonial with a full name, organization, photograph, one specific thing that changed, and written permission. Do not fill it with generic praise, credentials, or invented case studies. An empty page is more trustworthy than a vague endorsement.
 
 ---
 
-## 9. Out of scope for this site
+## 9. Technical constraints
 
-Christopher runs a second, quieter track: embedded technical work for larger nonprofits with staff and compliance obligations. That work is sold person to person with its own one-page document. **None of it belongs on this website** — its language would repel the grassroots founder on sight.
+- Static site. One `index.html` with an inline `<style>` block. No build step, no bundler, no framework, no npm, no package.json. Do not introduce any of these.
+- No JavaScript beyond the third party booking embed. No analytics libraries, animation libraries, sliders, or cookie banners.
+- No localStorage, sessionStorage, or cookies. Nothing that would require a consent banner.
+- External dependencies are Google Fonts and the booking embed. That is the whole list.
+- If analytics are added later, use a cookieless option that needs no consent banner.
+- Keep everything in one file unless it passes roughly 800 lines, then ask before splitting.
+
+---
+
+## 10. How to work in this repo
+
+- Small, single purpose changes. One concern per pull request.
+- Never rewrite sections that were not asked about. If you notice something else worth fixing, say so in the pull request description instead of changing it.
+- Explain what changed and why in plain language. Christopher reviews on a phone.
+- When adding a section, match the existing rhythm: a `<section>` with a top border, a `.wrap` container, an `h2`, and either prose or a `.cards` grid.
+- Numbered lists are only for real sequences. Do not add decorative numbering elsewhere.
+- Do not add sections speculatively. No testimonials until they exist. No logo bars until there are logos. No statistics that have not been verified.
+- If a request would break a rule in this file, flag it and ask.
+
+---
+
+## 11. Out of scope for this site
+
+Christopher also does embedded technical work for larger nonprofits with staff and compliance obligations. That is sold person to person with its own document. None of it belongs here, because its language would repel this buyer on sight.
 
 Keep off this site: HIPAA, GLBA, PII, compliance, cybersecurity audits, CRM migration, Salesforce, board governance, capacity building, IT modernization, procurement.
 
 ---
 
-## 10. Claims that must stay off the site
+## 12. Claims that must stay off the page
 
-These are either unverified or legally sensitive. Do not add them, and remove them if they appear.
-
-- Any promise that a grant will cover the cost, or that the service is free to the organization. No client has ever paid because of a grant; that model is untested.
-- HIPAA, GLBA, or other regulatory compliance capability claims.
-- Specific outcome metrics ("reclaim 8 hours a week," "increase donations by X%") that haven't been measured.
+- Any promise that a grant will cover the cost, or that the service is free to the organization. No client has ever paid because of a grant. That model is untested.
+- Regulatory compliance capability claims of any kind.
+- Outcome metrics that have not been measured, such as hours saved or percentage increases in donations.
 - Client names, logos, or quotes without written permission.
-- Certifications, LLC status, DBA registration, UEI, or CAGE codes that are not yet actually granted. The LLC and DBA were still in formation as of July 2026. List nothing as "pending" that has no application on file.
+- LLC status, DBA registration, certifications, UEI, or CAGE codes that are not yet actually granted. The LLC and DBA were still in formation as of August 2026. List nothing as pending that has no application on file.
 - Anything about cryptocurrency, tokens, or blockchain other than the FAQ's explicit denial.
 
----
-
-## 11. Deploy
-
-Merging to `main` triggers an automatic Cloudflare Pages deploy, live in under a minute. Build command `npm run build`, output directory `dist`. If something breaks, roll back to the previous deployment in the Cloudflare Pages dashboard rather than trying to hotfix under pressure.
-
-Before merging any change, confirm: does it read cleanly at 375px width, is all text 18px or larger, does every color pair meet the ratios in §5, and would a 68-year-old understand every word.
+**Coming, but not yet claimable.** Christopher is building interactive knowledge archives, where a founder's recordings and writing become something people can ask questions of. This will eventually be central to the positioning. It does not go on the site until one exists and a client has agreed to it being shown. A brand must deliver before it promotes.
 
 ---
 
-## 12. Landing page standard
+## 13. Before merging
 
-A research-backed landing page standard governs page structure alongside this file. Where the two disagree, **this file wins**. The resolved conflicts:
+Confirm every time:
 
-| Standard says | This project does | Why |
-|---|---|---|
-| Tier 1 testimonial required above the fold | No testimonials at all | §8 and §10. None exist yet with written permission. |
-| First-person CTA ("Start my free briefing") | "Request Your Free Briefing" | §4 locked copy. |
-| Felt-problem headline naming the visitor's pain | The locked headline | §3 bans negative framing about him. §4 locks it. |
-| Never show price before value is established | Price sits in the hero | He decides alone, at a kitchen table. The number early is the trust signal. |
-| Use specific statistics for credibility | Only verifiable numbers | §10. $3,000/month, every Friday, 15 minutes. Nothing unmeasured. |
-
-Where they agree, follow the stricter rule: one page and one action, no navigation, a booking link instead of a contact form, under 3 seconds on mobile, and no autoplay video. The standard's own research figures are internal reasoning only. None of them go on the page.
+- Does it read cleanly at 375px width?
+- Is all text 18px or larger?
+- Does every color pair meet the ratios in section 6?
+- Would a 68 year old understand every word?
+- Does the page still have exactly one goal and one action?

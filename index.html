@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Web3 Family — technology for people starting nonprofits</title>
+<meta name="description" content="Christopher Clarke handles the technology for people starting nonprofits: websites, donation pages, and email, with finished work every Friday. Request the free Digital Intelligence Briefing.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="/favicon.ico">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@600;700&display=swap">
+
+<!-- Cookieless analytics beacon goes here, if added. No consent banner required. -->
+
+<style>
+  :root {
+    --forest: #003223;
+    --orange: #fc4d00;
+    --cream: #f5ebe1;
+    --charcoal: #181C1B;
+    --cream-deep: #ede0d3;
+    --muted: #2f3d38;
+
+    --serif: 'Lora', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: var(--sans);
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--serif);
+    color: var(--forest);
+    line-height: 1.2;
+    margin: 0 0 0.6em;
+    text-wrap: balance;
+  }
+
+  h1 { font-size: 2rem; font-weight: 700; }
+  h2 { font-size: 1.5rem; font-weight: 600; }
+  h3 { font-size: 1.2rem; font-weight: 600; }
+
+  p, li { margin: 0 0 1.15em; max-width: 34em; }
+
+  a {
+    color: var(--forest);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--forest);
+    outline-offset: 3px;
+  }
+
+  .skip {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+  }
+
+  .skip:focus {
+    left: 1rem;
+    top: 1rem;
+    z-index: 10;
+    background: var(--cream-deep);
+    color: var(--forest);
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--forest);
+  }
+
+  .wrap {
+    max-width: 38rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  section {
+    border-top: 1px solid var(--forest);
+    padding: 3rem 0;
+  }
+
+  header.site-header, .portrait-block { border-top: 0; }
+
+  /* Block 1: header */
+  header.site-header {
+    padding: 1.75rem 0;
+  }
+
+  .logo {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--forest);
+  }
+
+  /* Block 2: portrait, name, city */
+  .portrait-block {
+    padding: 0.5rem 0 2.5rem;
+  }
+
+  .portrait {
+    display: block;
+    width: 9.5rem;
+    height: 9.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.1rem;
+  }
+
+  .portrait-name {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--forest);
+    margin: 0;
+  }
+
+  .portrait-city {
+    color: var(--muted);
+    margin: 0.2rem 0 0;
+    font-size: 18px;
+  }
+
+  /* Block 3-5: hero */
+  .hero { padding-top: 0.5rem; }
+
+  .subhead { font-size: 18px; }
+
+  .actions { margin-top: 1.75rem; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 56px;
+    padding: 0.9rem 1.5rem;
+    font-family: var(--sans);
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  /* Charcoal on orange is 5.08:1. White on orange fails, so text stays
+     charcoal. Orange on cream fails non-text contrast alone, so the
+     button carries a forest border. */
+  .btn-primary {
+    background: var(--orange);
+    color: var(--charcoal);
+    border: 2px solid var(--forest);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--forest);
+    border: 2px solid var(--forest);
+    text-decoration: none;
+  }
+
+  .actions .btn { margin: 0 0.75rem 0.75rem 0; }
+
+  .reassurance {
+    color: var(--muted);
+    font-size: 18px;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  /* Block 7: three promises */
+  .promise { margin-bottom: 1.75rem; }
+  .promise:last-child { margin-bottom: 0; }
+  .promise p { margin-bottom: 0; }
+
+  /* Block 8: price */
+  .price-line {
+    font-family: var(--serif);
+    font-weight: 700;
+    color: var(--forest);
+    font-size: 1.4rem;
+  }
+
+  /* Block 9: how it works */
+  .steps { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+
+  .steps li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 2.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .steps li:last-child { margin-bottom: 0; }
+
+  .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0.05em;
+    font-family: var(--serif);
+    font-weight: 700;
+    color: var(--forest);
+  }
+
+  .steps strong { display: block; margin-bottom: 0.15em; }
+
+  /* Block 11: four cards */
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.75rem 0;
+  }
+
+  .card {
+    background: var(--cream-deep);
+    padding: 1.25rem 1.4rem;
+  }
+
+  .card h3 { margin-bottom: 0.4rem; }
+  .card p { margin: 0; max-width: none; }
+
+  /* Block 12: FAQ */
+  .faq-item { margin-bottom: 1.75rem; }
+  .faq-item:last-child { margin-bottom: 0; }
+  .faq-item p { margin-bottom: 0; }
+
+  /* Block 13: booking */
+  #booking-widget { min-height: 4rem; margin: 1.75rem 0; }
+
+  /* Block 14: footer */
+  .site-footer { padding: 2.5rem 0; }
+  .site-footer p { font-size: 18px; color: var(--muted); margin: 0 0 0.5em; max-width: none; }
+  .site-footer p:last-child { margin-bottom: 0; }
+
+  @media (min-width: 40rem) {
+    h1 { font-size: 2.75rem; }
+    h2 { font-size: 1.875rem; }
+    section { padding: 4.5rem 0; }
+    header.site-header { padding: 2.25rem 0; }
+    .portrait { width: 11rem; height: 11rem; }
+    .cards { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <span class="logo">The Web3 Family</span>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="portrait-block">
+    <div class="wrap">
+      <!-- Christopher's headshot goes here. Do not replace with a stock photo. -->
+      <img class="portrait" src="christopher.jpg" alt="Christopher Clarke">
+      <p class="portrait-name">Christopher Clarke</p>
+      <p class="portrait-city">Inglewood, California</p>
+    </div>
+  </section>
+
+  <section class="hero">
+    <div class="wrap">
+      <h1>You did the hard part. I'll handle the internet.</h1>
+      <p class="subhead">Websites, donation pages, email, and everything technical. Handled for you, with something finished in your inbox every Friday.</p>
+
+      <div class="actions">
+        <!-- Dummy phone number. Replace with the real one. -->
+        <a class="btn btn-primary" href="#booking">Request my free briefing</a>
+        <a class="btn btn-secondary" href="tel:+15555555555">Or call me: (555) 555-5555</a>
+      </div>
+      <p class="reassurance">No cost, no obligation, and no sales pitch.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>You filed the paperwork. Then the internet showed up.</h2>
+      <p>Getting the 501(c)(3) was the part you could see coming.</p>
+      <p>What nobody warns you about is everything after. The domain name. The email that goes to people's spam folders. The donation page that will not work on a phone. The login you wrote down somewhere and cannot find now.</p>
+      <p>Maybe you hired somebody. Maybe they did half of it and stopped answering.</p>
+      <p>Months go by. The work you actually started this for sits waiting while you fight with software.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>That is my job. All of it.</h2>
+      <p>I am Christopher Clarke. One person, not an agency. I handle the technology for people starting nonprofits, and I only take on missions I believe in.</p>
+
+      <div class="promise">
+        <p><strong>Everything technical, handled.</strong> The website, the donation pages, the email, the accounts, the vendors. You never have to learn any of it.</p>
+      </div>
+      <div class="promise">
+        <p><strong>Something finished every Friday.</strong> Real work in your inbox each week, with a short video showing you what it does and how to use it.</p>
+      </div>
+      <div class="promise">
+        <p><strong>You own all of it.</strong> Every domain, account, and file is set up in your organization's name. If you ever decide to stop, you walk away with everything. Nothing is held.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="price-line">$3,000 a month. Month to month.</h2>
+      <p>No contract, no setup fee, no hourly billing, no surprise invoices. You can stop at the end of any month with a single email.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Four steps. That is the whole thing.</h2>
+      <ol class="steps">
+        <li><strong>I look you up first.</strong> Before we ever speak, I research your organization and your funding landscape and write down what I find.</li>
+        <li><strong>We talk for fifteen minutes.</strong> I walk you through it in plain English. You ask whatever you want. There is no pitch.</li>
+        <li><strong>You decide what matters.</strong> You set the priorities. I tell you straight what each one takes.</li>
+        <li><strong>Every Friday, work arrives.</strong> Finished, tested, and explained. You review it over coffee. I keep going.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!--
+    Block 10: proof. Stays empty until there is a real testimonial with a
+    full name, organization, photograph, one specific thing that changed,
+    and written permission on file. Do not fill this with generic praise,
+    credentials, or an invented case study. An empty page is more
+    trustworthy than a vague endorsement.
+  -->
+
+  <section>
+    <div class="wrap">
+      <h2>What is in the free Digital Intelligence Briefing</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>What funders find</h3>
+          <p>Exactly what a grant officer or a donor sees when they look your organization up online.</p>
+        </div>
+        <div class="card">
+          <h3>Where the money is</h3>
+          <p>Grants and funders currently supporting work like yours, and which ones you fit.</p>
+        </div>
+        <div class="card">
+          <h3>Where your people are</h3>
+          <p>The places online where the community you serve, and the people who would support you, already gather.</p>
+        </div>
+        <div class="card">
+          <h3>What to fix first</h3>
+          <p>A short, plain list of what would make the biggest difference, in the order I would do it.</p>
+        </div>
+      </div>
+      <p>It costs nothing, and it is yours to keep whether we work together or not.</p>
+      <a class="btn btn-primary" href="#booking">Request my free briefing</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Straight answers</h2>
+
+      <div class="faq-item">
+        <h3>Who owns the website and the accounts?</h3>
+        <p>You do. Everything is set up in your organization's name from the first day. I have access only to do the work. If we stop working together, you keep all of it and I hand over every password.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What if I want to stop?</h3>
+        <p>Send me an email before the next month starts. No fee, no penalty, no waiting period.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do I need to understand any of this?</h3>
+        <p>No. That is the entire point. You tell me what you are trying to do. I handle the rest and explain it in plain English.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What does "Web3" mean in your name?</h3>
+        <p>It means a web where what you build, you own. Public records, tracked dollars, and work that lives in your accounts instead of being trapped in software you cannot leave. It has nothing to do with cryptocurrency, tokens, or blockchain. None of that, ever.</p>
+      </div>
+      <div class="faq-item">
+        <h3>I am not sure what I need yet.</h3>
+        <p>That is normal, and it is what the free briefing is for. You will know a lot more after fifteen minutes, at no cost and with nothing owed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="booking">
+    <div class="wrap">
+      <h2>Let me show you where you stand.</h2>
+      <p>Fifteen minutes, no cost, no obligation.</p>
+
+      <!-- Booking widget embed goes here. Do not remove this container. -->
+      <div id="booking-widget"></div>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="#booking-widget">Request my free briefing</a>
+        <!-- Dummy phone number. Replace with the real one. -->
+        <a class="btn btn-secondary" href="tel:+15555555555">Or call me: (555) 555-5555</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>For the founder who built it the hard way, and wants someone solid in his corner.</p>
+    <p>The Web3 Family &middot; Clarke Tech Solutions &middot; Inglewood, California</p>
+  </div>
+</footer>
+
+</body>
+</html>
