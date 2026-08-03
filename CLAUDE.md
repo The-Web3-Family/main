@@ -127,6 +127,7 @@ Defined as CSS custom properties in `index.html`. Use the variables, never raw h
 | `--charcoal` | `#181C1B` | Body text, and text on orange |
 | `--cream-deep` | `#ede0d3` | Card and panel fills |
 | `--muted` | `#2f3d38` | Small labels, footer |
+| `--rust` | `#8f2c00` | Eyebrow labels, step numerals |
 
 **Type:** Lora at 600 and 700 for headings. Inter at 400, 500, 600, 700 for body. Loaded from Google Fonts. Do not add a third typeface.
 
@@ -139,6 +140,7 @@ These were computed, not estimated. Any new color pairing must be checked before
 | Charcoal on cream | 14.62:1 | AAA |
 | Forest on cream | 12.06:1 | AAA |
 | Muted on cream | 9.67:1 | AAA |
+| Rust on cream | 7.06:1 | AAA |
 | Charcoal on orange | 5.08:1 | AA, which is why button text is charcoal |
 | White on orange | 3.39:1 | **Fails. Never put white text on the orange.** |
 | Orange on cream | 2.88:1 | **Fails non text contrast. Orange elements need a forest border.** |
