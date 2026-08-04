@@ -104,14 +104,14 @@ The order is the argument. Do not reorder blocks without asking.
 8. The price, plainly. Do not bury it. Missing pricing reads as a trap to this reader.
 9. How it works. Four steps, numbered because they happen in order.
 10. Proof. Currently a comment in the code. See section 8.
-11. What is in the free Briefing. Four cards.
+11. What is in the free briefing. Four cards.
 12. Straight answers. The FAQ, which handles his last objections.
 13. Last action. Booking widget and phone number.
-14. Footer. One line.
+14. Footer. Name, city, phone. Nothing else, no links, no social icons.
 
-**Locked copy.** Do not change the headline, the three promises, the price line, the button text, or the footer line without an explicit request from Christopher.
+**Locked copy.** Do not change the headline, the three promises, the price block, the button text, or the footer without an explicit request from Christopher.
 
-**Naming consistency.** The free research deliverable is called the **Digital Intelligence Briefing**, short form "the Briefing". One name everywhere: site, booking widget, emails, documents. Never introduce a second name for it.
+**Naming consistency.** The free research deliverable is called **the free briefing**. One name everywhere: site, booking widget, emails, documents. "Digital Intelligence Briefing" was retired as jargon and does not come back.
 
 ---
 

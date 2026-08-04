@@ -6,7 +6,7 @@
 =============================================================================
 
   BEFORE THIS GOES LIVE, THREE THINGS NEED REPLACING.
-  Each is marked in the code below. Search for "SWAP".
+  Each is marked in the code below. Search for “SWAP”.
 
   1. THE PHOTO
      Marked SWAP-PHOTO. Put your headshot in the repo as christopher.jpg,
@@ -15,9 +15,10 @@
      important visual on the page. Do not launch without it.
 
   2. THE PHONE NUMBER
-     Appears twice, both marked SWAP-PHONE. Update the tel: link and the
-     visible text in both places. If you would rather not take calls,
-     delete both <a class="tel"> elements. The page still works.
+     Appears three times, all marked SWAP-PHONE. Update the tel: link
+     and the visible text in every place. If you would rather not take
+     calls, delete the <a class="tel"> elements. The footer line can
+     stay or go on its own.
 
   3. THE BOOKING WIDGET
      Marked SWAP-BOOKING near the bottom. Replace the placeholder
@@ -68,7 +69,7 @@
 
      Read it aloud imagining a 68 year old hearing it. If a word makes him
      pause, replace it. If a sentence needs a second read, split it. No em
-     dashes. First person singular, never "we". Body text never below
+     dashes. First person singular, never “we”. Body text never below
      18px anywhere, including the footer.
 
 =============================================================================
@@ -78,7 +79,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Web3 Family | Technology for people starting nonprofits</title>
-<meta name="description" content="Christopher Clarke handles the website, donation pages, email, and accounts for people starting nonprofits. Finished work every Friday. Flat $3,000 a month, month to month. Request the free Digital Intelligence Briefing.">
+<meta name="description" content="Christopher Clarke handles the website, donation pages, email, and accounts for people starting nonprofits. Finished work every Friday. Flat $3,000 a month, month to month. Request the free briefing.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="alternate icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -183,7 +184,7 @@ h1{
 .cta span{font-size:23px;letter-spacing:.004em}
 .cta small{font-weight:600;font-size:18px;margin-top:4px}
 .cta:hover{background:#ff5f18}
-.tel{background:transparent;color:var(--forest);min-height:62px;font-size:21px}
+.tel{background:transparent;color:var(--forest);min-height:66px;font-size:23px}
 .tel:hover{background:var(--cream-deep)}
 .band .tel:hover{background:var(--cream)}
 .reassure{font-size:18px;color:var(--muted);margin:0}
@@ -209,15 +210,23 @@ a:focus-visible{outline:3px solid var(--forest);outline-offset:3px}
 .sample figcaption{margin-top:12px;color:var(--muted);font-size:18px;line-height:1.5}
 
 /* ---------- price ---------- */
+.tier{margin-bottom:28px}
+.tier-second{padding-top:26px;margin-top:-4px;border-top:1px solid rgba(245,235,225,.22)}
+.tier-tag{
+  font-size:18px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:#f2b48e;margin:0 0 10px;
+}
 .figure{
   font-family:'Lora',serif;font-weight:700;line-height:1;
   font-size:clamp(54px,13.5vw,88px);letter-spacing:-.035em;color:var(--cream);
   margin:0 0 12px;
 }
+.figure-small{font-size:clamp(34px,8vw,46px);margin-bottom:8px}
 .figure-sub{
   font-family:'Lora',serif;font-size:clamp(22px,4.6vw,31px);
   color:var(--cream);line-height:1.25;margin:0 0 28px;
 }
+.figure-sub-small{font-size:20px;margin-bottom:0}
 
 /* ---------- steps ---------- */
 ol.steps{list-style:none;counter-reset:s;margin:34px 0 0;padding:0}
@@ -249,8 +258,11 @@ ol.steps p{margin:0}
 
 /* ---------- footer ---------- */
 footer{background:var(--forest);color:var(--cream);padding:48px 0}
-footer p{font-family:'Lora',serif;font-size:clamp(20px,3.4vw,24px);color:var(--cream);line-height:1.4;max-width:30ch}
-footer small{font-size:18px;color:#cbbfb3}
+footer p{margin:0 0 8px}
+footer p:last-child{margin-bottom:0}
+.footer-name{font-family:'Lora',serif;font-weight:700;font-size:22px;color:var(--cream)}
+.footer-line{font-size:18px;color:#cbbfb3}
+.footer-line a{color:#cbbfb3;text-decoration-thickness:2px}
 
 @media (min-width:760px){
   .cards{grid-template-columns:1fr 1fr;gap:24px}
@@ -267,10 +279,10 @@ footer small{font-size:18px;color:#cbbfb3}
 <!-- HEADER. No navigation by design. Do not add links here. -->
 <header>
   <div class="wrap brand">
-    <div class="mark">W3</div>
+    <div class="mark">CC</div>
     <div>
-      <b>The Web3 Family</b>
-      <span>Technology handled for nonprofits</span>
+      <b>Christopher Clarke</b>
+      <span>The Web3 Family</span>
     </div>
   </div>
 </header>
@@ -288,7 +300,7 @@ footer small{font-size:18px;color:#cbbfb3}
         </div>
       </div>
 
-      <h1>You did the hard part. I'll handle the internet.</h1>
+      <h1>You did the hard part. I’ll handle the internet.</h1>
 
       <p class="subhead">Websites, donation pages, email, and everything technical. Handled for you, with something finished in your inbox every Friday.</p>
 
@@ -297,7 +309,7 @@ footer small{font-size:18px;color:#cbbfb3}
           <span>Request my free briefing</span>
           <small>Fifteen minutes. No cost.</small>
         </a>
-        <!-- SWAP-PHONE 1 of 2 -->
+        <!-- SWAP-PHONE 1 of 3 -->
         <a class="tel" href="tel:+15555555555">Or call me: (555) 555-5555</a>
       </div>
       <p class="reassure">No obligation, and no sales pitch.</p>
@@ -310,7 +322,7 @@ footer small{font-size:18px;color:#cbbfb3}
       <p class="eyebrow">The part nobody warns you about</p>
       <h2>You filed the paperwork. Then the internet showed up.</h2>
       <p>Getting the 501(c)(3) was the part you could see coming.</p>
-      <p>What nobody warns you about is everything after. The domain name. The email that lands in people's spam folders. The donation page that will not work on a phone. The login you wrote down somewhere and cannot find now.</p>
+      <p>What nobody warns you about is everything after. The domain name. The email that lands in people’s spam folders. The donation page that will not work on a phone. The login you wrote down somewhere and cannot find now.</p>
       <p>Maybe you hired somebody. Maybe they did half of it and stopped answering.</p>
       <p>Months go by, and the work you actually started this for sits waiting while you fight with software.</p>
     </div>
@@ -325,7 +337,7 @@ footer small{font-size:18px;color:#cbbfb3}
       <ul class="promise">
         <li><strong>The technical side, handled.</strong> Your website, donation pages, email, domain, the accounts, and the vendors behind them. You never have to learn any of it.</li>
         <li><strong>Something finished every Friday.</strong> Real work in your inbox each week, with a short video showing you what it does and how to use it.</li>
-        <li><strong>You own all of it.</strong> Every domain, account, and file is set up in your organization's name. If you ever decide to stop, you walk away with everything.</li>
+        <li><strong>You own all of it.</strong> Every domain, account, and file is set up in your organization’s name. If you ever decide to stop, you walk away with everything.</li>
       </ul>
     </div>
   </section>
@@ -386,10 +398,19 @@ footer small{font-size:18px;color:#cbbfb3}
   <section class="ink">
     <div class="wrap">
       <p class="eyebrow">What it costs</p>
-      <p class="figure">$3,000</p>
-      <p class="figure-sub">a month, month to month.</p>
-      <p>No contract. No setup fee. No hourly billing, and no surprise invoices.</p>
-      <p style="margin-bottom:0">You can stop at the end of any month with a single email.</p>
+
+      <div class="tier">
+        <p class="tier-tag">Recommended</p>
+        <p class="figure">$3,000</p>
+        <p class="figure-sub">a month, two hours a week.</p>
+      </div>
+
+      <div class="tier tier-second">
+        <p class="figure figure-small">$500</p>
+        <p class="figure-sub figure-sub-small">a month, one hour every other week.</p>
+      </div>
+
+      <p style="margin-bottom:0">Both are month to month. No contract, and you can stop any time.</p>
     </div>
   </section>
 
@@ -431,10 +452,9 @@ footer small{font-size:18px;color:#cbbfb3}
     <div class="wrap">
       <p class="eyebrow">What you end up with</p>
       <h2>It all goes in one place, and it is yours.</h2>
-      <p>Everything I make lands in a Google Drive set up under your organization's name. Every Friday, that week's work goes in. The website files, the videos, the documents, the research, the recordings of our conversations.</p>
+      <p>Everything I make lands in a Google Drive set up under your organization’s name. Every Friday, that week’s work goes in, and it builds up. After a year you do not have a website. You have everything your organization has said, made, and figured out, in one place and in order.</p>
       <p>You can put things in too. Old photographs, recordings, notes, whatever you have been carrying around in boxes. I take what you put in and turn it into something people can actually see.</p>
-      <p>It builds up. After a year you do not have a website. You have everything your organization has said, made, and figured out, in one place and in order.</p>
-      <p>If you and I ever stop working together, nothing has to move. It is already in your account. You keep all of it.</p>
+      <p>It is already in your account, under your name. If you and I ever stop working together, you keep all of it and could walk away with the whole thing tomorrow.</p>
     </div>
   </section>
 
@@ -442,7 +462,7 @@ footer small{font-size:18px;color:#cbbfb3}
   <section>
     <div class="wrap">
       <p class="eyebrow">Free, and yours to keep</p>
-      <h2>What is in the free Digital Intelligence Briefing</h2>
+      <h2>What is in the free briefing</h2>
       <div class="cards">
         <div class="card">
           <h3>What funders find</h3>
@@ -473,17 +493,7 @@ footer small{font-size:18px;color:#cbbfb3}
 
       <div class="faq-item">
         <h3>Who owns the website and the accounts?</h3>
-        <p>You do. Everything is set up in your organization's name from the first day. I have access only to do the work. If we stop working together, you keep all of it and I hand over every password.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>What happens if you get sick or take time off?</h3>
-        <p>I tell you ahead of time when I am away, and the Friday schedule adjusts. Everything I build sits in your accounts, under your name, written down plainly enough that anyone could pick it up. You are never locked out of your own work.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>What is not included?</h3>
-        <p>I handle your website, donation pages, email, domain, and the software and vendors connected to them. I do not do your bookkeeping, your taxes, or your office equipment. If something falls outside what I do, I will tell you plainly and help you find the right person.</p>
+        <p>You do. Everything is set up in your organization’s name from the first day. I have access only to do the work. If we stop working together, you keep all of it and I hand over every password.</p>
       </div>
 
       <div class="faq-item">
@@ -492,18 +502,13 @@ footer small{font-size:18px;color:#cbbfb3}
       </div>
 
       <div class="faq-item">
-        <h3>Do I need to understand any of this?</h3>
-        <p>No. That is the entire point. You tell me what you are trying to do, and I handle the rest and explain it in plain English.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>What does "Web3" mean in your name?</h3>
+        <h3>What does “Web3” mean in your name?</h3>
         <p>It means a web where what you build, you own. Public records, tracked dollars, and work that lives in your accounts instead of being trapped in software you cannot leave. It has nothing to do with cryptocurrency, tokens, or blockchain. None of that, ever.</p>
       </div>
 
       <div class="faq-item">
-        <h3>I am not sure what I need yet.</h3>
-        <p>That is normal, and it is what the free briefing is for. You will know a great deal more after fifteen minutes, at no cost and with nothing owed.</p>
+        <h3>Do I need to understand any of this?</h3>
+        <p>No. That is the entire point. You tell me what you are trying to do, and I handle the rest and explain it in plain English.</p>
       </div>
     </div>
   </section>
@@ -523,7 +528,7 @@ footer small{font-size:18px;color:#cbbfb3}
         </div>
       </div>
 
-      <!-- SWAP-PHONE 2 of 2 -->
+      <!-- SWAP-PHONE 2 of 3 -->
       <a class="tel" href="tel:+15555555555">Or call me: (555) 555-5555</a>
     </div>
   </section>
@@ -531,8 +536,10 @@ footer small{font-size:18px;color:#cbbfb3}
 
 <footer>
   <div class="wrap">
-    <p>For the founder who built it the hard way, and wants someone solid in his corner.</p>
-    <small>The Web3 Family &middot; Clarke Tech Solutions &middot; Inglewood, California</small>
+    <p class="footer-name">Christopher Clarke</p>
+    <p class="footer-line">Inglewood, California</p>
+    <!-- SWAP-PHONE 3 of 3 -->
+    <p class="footer-line"><a href="tel:+15555555555">(555) 555-5555</a></p>
   </div>
 </footer>
 
