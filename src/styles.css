@@ -1,0 +1,195 @@
+:root{
+  --forest:#003223;
+  --orange:#fc4d00;
+  --rust:#8f2c00;
+  --cream:#f5ebe1;
+  --cream-deep:#ede0d3;
+  --charcoal:#181C1B;
+  --muted:#2f3d38;
+  --hair:rgba(24,28,27,.2);
+  --gap:clamp(48px,9vw,84px);
+  --grain:url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22160%22%20height=%22160%22%3E%3Cfilter%20id=%22g%22%3E%3CfeTurbulence%20type=%22fractalNoise%22%20baseFrequency=%220.85%22%20numOctaves=%223%22/%3E%3C/filter%3E%3Crect%20width=%22160%22%20height=%22160%22%20filter=%22url%28%23g%29%22%20opacity=%220.05%22/%3E%3C/svg%3E');
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;color:var(--charcoal);
+  background-color:var(--cream);
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  font-size:20px;line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Lora',Georgia,serif;color:var(--forest);margin:0}
+p{margin:0 0 1.15rem}
+strong{font-weight:700;color:var(--forest)}
+a{color:var(--forest);text-underline-offset:3px;text-decoration-thickness:2px}
+a:hover{color:var(--rust)}
+.wrap{max-width:680px;margin:0 auto;padding:0 24px}
+.wrap p,.wrap li{max-width:62ch}
+
+.eyebrow{
+  display:block;font-size:18px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--rust);margin:0 0 14px;line-height:1.3;
+}
+
+section{padding:var(--gap) 0}
+.band{background-color:var(--cream-deep);background-image:var(--grain);background-repeat:repeat;background-size:160px 160px}
+.ink{background:var(--forest);color:var(--cream)}
+.ink h2,.ink h3{color:var(--cream)}
+.ink p{color:var(--cream)}
+.ink .eyebrow{color:#f2b48e}
+
+h2{
+  font-size:clamp(29px,6vw,38px);font-weight:600;line-height:1.18;
+  letter-spacing:-.01em;margin-bottom:14px;
+}
+h2::after{
+  content:"";display:block;width:58px;height:4px;border-radius:2px;
+  background:var(--orange);margin:16px 0 22px;
+}
+h3{font-size:21px;line-height:1.3;margin-bottom:6px}
+
+/* editorial two-column split: label left, body right, desktop only */
+.split{display:flex;flex-direction:column}
+.split-label h2::after{margin-bottom:0}
+
+/* ---------- header ---------- */
+header{padding:20px 0;border-bottom:1px solid var(--hair)}
+.brand{display:flex;align-items:center;gap:13px}
+.mark{
+  width:48px;height:48px;border-radius:11px;background:var(--forest);color:var(--orange);
+  font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+}
+.brand b{font-family:'Lora',serif;font-size:22px;color:var(--forest);display:block;line-height:1.15}
+.brand span{font-size:18px;color:var(--muted);font-weight:500}
+
+/* ---------- hero ---------- */
+.hero{padding:var(--gap) 0 calc(var(--gap) * .8)}
+.me{display:flex;align-items:center;gap:16px;margin-bottom:32px}
+.portrait{
+  width:112px;height:112px;border-radius:50%;object-fit:cover;flex:none;
+  border:3px solid var(--forest);background:var(--cream-deep);
+}
+.me b{font-family:'Lora',serif;font-size:21px;color:var(--charcoal);display:block;line-height:1.2}
+.me span{font-size:18px;color:var(--muted)}
+
+h1{
+  font-size:clamp(40px,10vw,66px);font-weight:600;
+  line-height:1.05;letter-spacing:-.02em;margin-bottom:22px;
+}
+.subhead{
+  font-family:'Lora',serif;font-size:clamp(22px,3.6vw,26px);font-weight:600;color:var(--forest);
+  line-height:1.42;margin:0 0 32px;max-width:44ch;
+}
+
+/* ---------- actions ---------- */
+.actions{margin-bottom:14px}
+.cta,.tel{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;text-decoration:none;font-weight:700;
+  border:2px solid var(--forest);border-radius:3px;padding:14px 24px;margin-bottom:14px;
+}
+.cta{background:var(--orange);color:var(--charcoal);min-height:68px;box-shadow:0 4px 0 rgba(24,28,27,.22)}
+.cta span{font-size:20px}
+.cta small{font-weight:400;font-size:18px;margin-top:4px}
+.cta:hover{background:#ff5f18}
+.tel{background:transparent;color:var(--forest);min-height:60px;font-size:20px}
+.tel:hover{background:var(--cream-deep)}
+.band .tel:hover{background:var(--cream)}
+.reassure{font-size:18px;color:var(--muted);margin:0}
+a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+
+/* ---------- promises (outlined checkmarks) ---------- */
+.promise{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-direction:column;gap:24px}
+.promise li{display:flex;gap:14px}
+.promise li p{margin:0}
+.promise-check{
+  flex:none;width:32px;height:32px;margin-top:2px;border-radius:50%;
+  border:2px solid var(--forest);color:var(--forest);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;font-weight:600;
+}
+
+/* ---------- price (single monthly figure) ---------- */
+p.figure{
+  font-family:'Lora',serif;font-weight:700;line-height:.95;
+  font-size:clamp(56px,13vw,84px);letter-spacing:-.03em;color:var(--orange);
+  margin:0 0 12px;
+}
+.figure-sub{
+  font-family:'Lora',serif;font-weight:600;font-size:clamp(22px,4vw,26px);
+  color:var(--cream);line-height:1.3;margin:0 0 32px;
+}
+
+/* ---------- steps ---------- */
+.steps{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-direction:column;gap:28px}
+.steps li{display:flex;gap:16px}
+.steps li p{margin:0}
+.step-num{
+  flex:none;width:58px;font-family:'Lora',serif;font-weight:700;font-size:48px;
+  line-height:.9;color:var(--rust);
+}
+
+/* ---------- cards ---------- */
+.cards{display:grid;grid-template-columns:1fr;gap:18px;margin-top:30px}
+.card{background:var(--cream);border:1px solid var(--hair);border-top:4px solid var(--orange);padding:22px}
+.card p{margin:0}
+
+/* ---------- faq ---------- */
+.faq-list{display:flex;flex-direction:column}
+.faq-item{padding:24px 0;border-top:1px solid var(--hair)}
+.faq-item:last-child{border-bottom:1px solid var(--hair)}
+.faq-item p{margin:0}
+
+/* ---------- booking ---------- */
+.panel{background:#fff;border:2px solid var(--forest);overflow:hidden;margin:28px 0 24px}
+.panel-head{
+  background:var(--forest);color:var(--cream);padding:16px 20px;
+  font-family:'Inter',sans-serif;font-weight:600;font-size:18px;letter-spacing:.06em;text-transform:uppercase;
+}
+.panel-body{min-height:280px;display:flex;align-items:center;justify-content:center;padding:26px;text-align:center}
+.panel-body p{font-size:18px;color:var(--muted);margin:0}
+
+/* ---------- footer ---------- */
+footer{background:var(--forest);color:var(--cream);padding:44px 0}
+footer p{margin:0 0 8px}
+footer p:last-child{margin-bottom:0}
+.footer-name{font-family:'Lora',serif;font-weight:700;font-size:22px;color:var(--cream)}
+.footer-line{font-size:18px;color:#cbbfb3}
+.footer-line a{color:#cbbfb3;text-decoration-thickness:2px}
+
+@media (min-width:760px){
+  .wrap{max-width:1000px;padding:0 48px}
+  section{padding:calc(var(--gap) * 1.15) 0}
+  h2{font-size:clamp(34px,3.2vw,38px)}
+
+  .split{display:grid;grid-template-columns:1fr 1.5fr;gap:56px;align-items:start}
+  .split-label h2::after{margin-bottom:0}
+
+  header{padding:26px 0}
+  .portrait{width:128px;height:128px}
+  .me b{font-size:22px}
+  .me span{font-size:19px}
+  h1{margin-bottom:26px}
+
+  .actions{display:flex;gap:16px}
+  .cta,.tel{flex:1}
+  .cta{min-height:72px}
+  .cta span,.tel{font-size:21px}
+  .tel{min-height:62px}
+
+  .price-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:56px;align-items:start}
+  .price-grid p{max-width:none}
+
+  .steps{display:grid;grid-template-columns:1fr 1fr;gap:36px 56px}
+  .step-num{font-size:52px;width:66px}
+
+  .cards{grid-template-columns:1fr 1fr;gap:22px}
+  .card{padding:28px}
+
+  .faq-list{max-width:900px}
+  .faq-item{display:grid;grid-template-columns:1fr 1.4fr;gap:40px}
+
+  .booking-wrap{max-width:620px}
+}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}

@@ -6,14 +6,14 @@ Project instructions for theweb3family.com. Read this fully before changing anyt
 
 ## 1. The project
 
-A single page marketing site for **The Web3 Family**, operated by **Christopher Clarke** in Inglewood, California.
+A marketing site for **The Web3 Family**, operated by **Christopher Clarke** in Inglewood, California. Built to grow past one page, on purpose.
 
 The business: Christopher handles the technology for people starting nonprofits. He researches their organization and funding landscape, hands them the findings for free, then builds their website, donation pages, and digital assets for a flat $3,000 a month, delivering finished work every Friday.
 
-The page has exactly one job: get the right visitor to request the free Briefing. Every change should make that easier, clearer, or more legible.
+The homepage has exactly one job: get the right visitor to request the free briefing. Every change should make that easier, clearer, or more legible. Every other page carries the same design system and the same restraint, even once there are more of them.
 
-**Hosting:** Vercel, deploying automatically from this repo's main branch.
-**Files:** `index.html` is the whole site. One file, no build step.
+**Hosting:** Vercel, deploying automatically from this repo's main branch. Vercel runs `npm run build` and serves `_site`.
+**Files:** built with Eleventy. `src/` holds every page and the shared layout; `src/_includes/base.njk` is the one header, footer, and `<head>` every page uses; `src/styles.css` is the one design system every page shares. See section 9.
 
 ---
 
@@ -165,10 +165,10 @@ Not compliance theater. For this reader it is the positioning. If he has to squi
 
 ## 8. Placeholders that are intentional
 
-Three slots in `index.html` are waiting on real material. Do not fill them with substitutes.
+Three slots in `src/index.njk` are waiting on real material. Do not fill them with substitutes.
 
-- `src="christopher.jpg"` in the hero. Christopher's headshot goes here.
-- The phone number, currently a dummy, appears twice.
+- `src="christopher.jpg"` in the hero. Christopher's headshot goes here. Once it exists, add it under `src/` and add it to the passthrough copy list in `.eleventy.js`.
+- The phone number, currently a dummy, appears three times: twice in `src/index.njk`, once in the footer in `src/_includes/base.njk`.
 - The booking widget container near the bottom.
 - **Block 10, proof.** Currently a comment. It stays empty until there is a real testimonial with a full name, organization, photograph, one specific thing that changed, and written permission. Do not fill it with generic praise, credentials, or invented case studies. An empty page is more trustworthy than a vague endorsement.
 
@@ -176,12 +176,14 @@ Three slots in `index.html` are waiting on real material. Do not fill them with 
 
 ## 9. Technical constraints
 
-- Static site. One `index.html` with an inline `<style>` block. No build step, no bundler, no framework, no npm, no package.json. Do not introduce any of these.
-- No JavaScript beyond the third party booking embed. No analytics libraries, animation libraries, sliders, or cookie banners.
+- **Built with Eleventy**, deliberately, so a design-system-wide change (a color, a spacing value, the type scale) is one edit instead of one edit per page. That was the entire reason this site moved off a single static file: it started growing past one page. Do not reach for anything heavier (Astro, Next.js, a component framework) without asking. This project already tried Astro twice before landing here.
+- `src/_includes/base.njk` is the shared layout: the `<head>`, the header, and the footer. Every page uses it. Do not duplicate the header or footer markup into a page file.
+- `src/styles.css` is the one stylesheet every page links. A style that only one page needs still belongs in this file, scoped with a class; do not add a second stylesheet or inline a `<style>` block into a page.
+- Ships zero client-side JavaScript beyond the third-party booking embed. No analytics libraries, animation libraries, sliders, or cookie banners. Eleventy's job is finished at build time; nothing it does should add a runtime script.
 - No localStorage, sessionStorage, or cookies. Nothing that would require a consent banner.
-- External dependencies are Google Fonts and the booking embed. That is the whole list.
+- External dependencies are Google Fonts and the booking embed. That is the whole list of things a visitor's browser talks to. `@11ty/eleventy` is a dev-time dependency only; it never ships to the browser.
 - If analytics are added later, use a cookieless option that needs no consent banner.
-- Keep everything in one file unless it passes roughly 800 lines, then ask before splitting.
+- Build: `npm run build` outputs static files to `_site/`. `npm run dev` serves it locally with live reload. There is no other build step and no server at runtime; Vercel serves what Eleventy generates, nothing more.
 
 ---
 
@@ -190,7 +192,8 @@ Three slots in `index.html` are waiting on real material. Do not fill them with 
 - Small, single purpose changes. One concern per pull request.
 - Never rewrite sections that were not asked about. If you notice something else worth fixing, say so in the pull request description instead of changing it.
 - Explain what changed and why in plain language. Christopher reviews on a phone.
-- When adding a section, match the existing rhythm: a `<section>` with a top border, a `.wrap` container, an `h2`, and either prose or a `.cards` grid.
+- When adding a section to a page, match the existing rhythm: a `<section>` with a top border, a `.wrap` container, an `h2`, and either `.split` prose or a `.cards` grid.
+- **Adding a new page:** create a file under `src/` with `layout: base.njk` in its front matter, a `title`, and a `description`. The header and footer come along automatically from `base.njk`. Write its sections using the same rhythm as `src/index.njk`. Do not add a navigation link for it anywhere without an explicit conversation first: the whole site is built around having nothing to click but the phone number and the one call to action, and a nav bar undoes that on every page at once, not just the new one.
 - Numbered lists are only for real sequences. Do not add decorative numbering elsewhere.
 - Do not add sections speculatively. No testimonials until they exist. No logo bars until there are logos. No statistics that have not been verified.
 - If a request would break a rule in this file, flag it and ask.

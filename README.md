@@ -2,7 +2,8 @@
 
 The marketing site for The Web3 Family (Clarke Tech Solutions, Inglewood, California).
 
-One page, one job: get the right visitor to request the free Digital Intelligence Briefing.
+The homepage has one job: get the right visitor to request the free briefing. Built
+to grow past one page.
 
 **Read `CLAUDE.md` before changing anything.** It holds the audience, the design
 direction, the copy rules, the locked copy, the brand tokens, the verified contrast
@@ -11,26 +12,48 @@ ratios, and the accessibility floor. Those are project rules, not suggestions.
 ## Structure
 
 ```
-index.html      the entire site: markup and styles in one file
-favicon.svg
-favicon.ico
+src/
+  _includes/
+    base.njk      the shared layout: <head>, header, footer, every page uses it
+  index.njk        the homepage
+  styles.css       the one stylesheet every page shares
+  favicon.svg
+  favicon.ico
+.eleventy.js       build config: input/output dirs, passthrough copy list
 ```
 
-There is one page and one file. No build step, no framework, no npm. If the file
-grows past roughly 800 lines, ask before splitting.
+Built with [Eleventy](https://www.11ty.dev/). A brand-wide change (a color, a
+spacing value) is one edit to `src/styles.css`, not one edit per page.
 
 ## Running it
 
-Open `index.html` directly in a browser, or serve the folder with anything static:
+```
+npm install
+npm run dev       # local preview with live reload, localhost:8080
+npm run build     # static output into _site/
+```
+
+## Adding a page
+
+Create a file under `src/` with front matter:
 
 ```
-python3 -m http.server 4321
+---
+layout: base.njk
+title: Page title here
+description: One sentence for the meta description.
+---
 ```
+
+Write the page's sections below the front matter, matching the rhythm in
+`src/index.njk`: a `<section>` with a top border (or `class="band"` for the
+alternate ground), a `.wrap` container, and either `.split` prose or a `.cards`
+grid. The header and footer come from `base.njk` automatically. Do not add a
+navigation link anywhere without asking first — see CLAUDE.md section 10.
 
 ## Deploying
 
-Vercel builds from `main` automatically. No framework preset, no build command,
-no output directory. It serves the repository root as-is.
+Vercel builds from `main` automatically: `npm run build`, output directory `_site`.
 
 If something breaks, roll back to the previous deployment in the Vercel dashboard
 rather than hotfixing under pressure.
@@ -43,16 +66,18 @@ Confirm every time:
 2. All text is 18px or larger.
 3. Every color pair meets the ratios in CLAUDE.md section 6.
 4. A 68-year-old would understand every word.
-5. The page still has exactly one goal and one action.
+5. Each page still has exactly one goal and one action.
 
 ## Open slots
 
-Placeholders in `index.html` are intentional and must not be removed or replaced
-with substitutes:
+Placeholders are intentional and must not be removed or replaced with substitutes:
 
-- `src="christopher.jpg"` in the portrait block. Drop the real photo in the repo
-  root to fill it.
-- The phone number, currently `(555) 555-5555` in two places.
-- `<div id="booking-widget">` near the bottom. The booking embed goes there.
-- The proof section, currently just an HTML comment. Stays empty until there is
-  a real testimonial with a full name, organization, photo, and written permission.
+- `src="christopher.jpg"` in `src/index.njk`'s hero. Once the real photo exists,
+  add it under `src/` and add it to the passthrough copy list in `.eleventy.js`.
+- The phone number, currently `(555) 555-5555` in three places: twice in
+  `src/index.njk`, once in the footer in `src/_includes/base.njk`.
+- The booking widget placeholder near the bottom of `src/index.njk`
+  (`.panel-body`). The booking embed goes there.
+- The proof section, currently just an HTML comment in `src/index.njk`. Stays
+  empty until there is a real testimonial with a full name, organization, photo,
+  and written permission.
