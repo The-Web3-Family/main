@@ -14,12 +14,17 @@ ratios, and the accessibility floor. Those are project rules, not suggestions.
 ```
 src/
   _includes/
-    base.njk      the shared layout: <head>, header, footer, every page uses it
-  index.njk        the homepage
-  styles.css       the one stylesheet every page shares
+    base.njk       the shared layout: <head>, header, footer, every page uses it
+    article.njk    the shared layout for articles, wraps base.njk
+  index.njk         the homepage
+  articles/
+    index.njk       the /articles/ listing page
+    *.md            one file per published article
+  styles.css        the one stylesheet every page shares
   favicon.svg
   favicon.ico
-.eleventy.js       build config: input/output dirs, passthrough copy list
+.eleventy.js        build config: input/output dirs, passthrough copy list
+article-template.md starting point for a new article, copy into src/articles/
 ```
 
 Built with [Eleventy](https://www.11ty.dev/). A brand-wide change (a color, a
@@ -49,7 +54,15 @@ Write the page's sections below the front matter, matching the rhythm in
 `src/index.njk`: a `<section>` with a top border (or `class="band"` for the
 alternate ground), a `.wrap` container, and either `.split` prose or a `.cards`
 grid. The header and footer come from `base.njk` automatically. Do not add a
-navigation link anywhere without asking first — see CLAUDE.md section 10.
+navigation link anywhere without asking first, see CLAUDE.md section 10.
+
+## Adding an article
+
+Copy `article-template.md` into `src/articles/` under a new filename (that
+filename becomes the URL), fill in the front matter, write the body in
+Markdown, done. It shows up on `/articles/` and builds automatically. Nothing
+currently links to `/articles/` itself, so it's reachable by direct URL only,
+on purpose, until there's a decision about how visitors should find it.
 
 ## Deploying
 

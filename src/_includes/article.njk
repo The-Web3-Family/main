@@ -1,0 +1,16 @@
+---
+layout: base.njk
+---
+<article class="article">
+  <div class="wrap">
+    <p class="article-date">{{ page.date | readableDate }}</p>
+    <h1>{{ title }}</h1>
+    {{ content | safe }}
+    <div class="article-cta">
+      <a class="cta" href="/#booking">
+        <span>Request the free briefing</span>
+        <small>Fifteen minutes. Nothing to buy.</small>
+      </a>
+    </div>
+  </div>
+</article>
