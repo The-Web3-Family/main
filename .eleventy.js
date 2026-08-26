@@ -1,9 +1,9 @@
 module.exports = function (eleventyConfig) {
   // Static assets that ship as-is, unchanged, into the built site.
-  // Add christopher.jpg here once the real photo exists in src/.
   eleventyConfig.addPassthroughCopy("src/styles.css");
   eleventyConfig.addPassthroughCopy("src/favicon.ico");
   eleventyConfig.addPassthroughCopy("src/favicon.svg");
+  eleventyConfig.addPassthroughCopy("src/christopher.jpg");
 
   // Articles are plain Markdown files under src/articles/. Adding one is
   // the whole authoring workflow: no template edits needed. See

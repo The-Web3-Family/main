@@ -162,12 +162,11 @@ Not compliance theater. For this reader it is the positioning. If he has to squi
 
 ## 8. Placeholders that are intentional
 
-Two slots in `src/index.njk` are waiting on real material. Do not fill them with substitutes.
+One slot in `src/index.njk` is waiting on real material. Do not fill it with a substitute.
 
-- `src="christopher.jpg"` in the hero. Christopher's headshot goes here. Once it exists, add it under `src/` and add it to the passthrough copy list in `.eleventy.js`.
 - The booking widget container near the bottom.
 
-The phone number (310-703-6003) and email (christopher@theweb3family.com) are real, not placeholders.
+The portrait (`src/christopher.jpg`), the phone number (310-703-6003), and the email (christopher@theweb3family.com) are real, not placeholders.
 
 **Block 8, proof.** The section heading and one line ("This space belongs to my clients...") are real, shipped copy, not a placeholder to fill in generically. It stays exactly as it is until there is a real testimonial with a full name, organization, photograph, one specific thing that changed, and written permission, and then it gets replaced with that. Do not add generic praise, credentials, or invented case studies in the meantime. An empty-feeling section is more trustworthy than a vague endorsement.
 

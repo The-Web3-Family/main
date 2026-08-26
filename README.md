@@ -83,14 +83,14 @@ Confirm every time:
 
 ## Open slots
 
-Placeholders are intentional and must not be removed or replaced with substitutes:
+One placeholder is intentional and must not be removed or replaced with a
+substitute:
 
-- `src="christopher.jpg"` in `src/index.njk`'s hero. Once the real photo exists,
-  add it under `src/` and add it to the passthrough copy list in `.eleventy.js`.
 - The booking widget placeholder near the bottom of `src/index.njk`
   (`.panel-body`). The booking embed goes there.
 
-The phone number (310-703-6003) and email (christopher@theweb3family.com) are
-real. The proof section's heading and single line are real, shipped copy too;
-they stay as they are until there is a real testimonial with a full name,
-organization, photo, and written permission.
+The portrait (`src/christopher.jpg`), the phone number (310-703-6003), and
+the email (christopher@theweb3family.com) are all real. The proof section's
+heading and single line are real, shipped copy too; they stay as they are
+until there is a real testimonial with a full name, organization, photo, and
+written permission.
