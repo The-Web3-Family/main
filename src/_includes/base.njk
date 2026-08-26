@@ -6,7 +6,7 @@
   page's own file under src/. Read CLAUDE.md before changing anything.
 =============================================================================
 
-  BEFORE THIS GOES LIVE, THREE THINGS NEED REPLACING.
+  BEFORE THIS GOES LIVE, TWO THINGS NEED REPLACING.
   Each is marked in the code below and in src/index.njk. Search for “SWAP”.
 
   1. THE PHOTO
@@ -16,26 +16,22 @@
      400x400, face centered, daylight if possible. This is the single most
      important visual on the page. Do not launch without it.
 
-  2. THE PHONE NUMBER
-     Appears three times: twice in src/index.njk, once below in this
-     file's footer. All marked SWAP-PHONE. Update the tel: link and the
-     visible text in every place. If you would rather not take calls,
-     delete the <a class="tel"> elements. The footer line can stay or go
-     on its own.
-
-  3. THE BOOKING WIDGET
+  2. THE BOOKING WIDGET
      Marked SWAP-BOOKING in src/index.njk. Replace the placeholder
      paragraph with your embed code, then test it on an actual phone. If
      the widget traps scrolling, fix that before anything else.
 
+     The phone number is real: 310-703-6003, appearing in the hero, the
+     last action section, and the footer below. The footer also carries
+     the real email, christopher@theweb3family.com.
+
   WHAT IS DELIBERATELY MISSING
 
-     There is no testimonial section on the homepage. That is on purpose.
-     It goes in only when you have a real one: full name, organization,
-     photograph, one specific thing that changed, and written permission.
-     An empty page is more trustworthy than a vague quote. The slot is
-     marked in src/index.njk where it belongs, between how it works and
-     the free briefing.
+     The proof section on the homepage names itself and says nothing more
+     yet, on purpose. It fills in only with a real testimonial: full name,
+     organization, photograph, one specific thing that changed, and
+     written permission. Do not replace that placeholder line with
+     generic praise or an invented case study.
 
   DESIGN NOTES, so nothing gets flattened by accident
 
@@ -131,9 +127,10 @@
 <footer>
   <div class="wrap">
     <p class="footer-name">Christopher Clarke</p>
+    <p class="footer-line">The Web3 Family</p>
     <p class="footer-line">Inglewood, California</p>
-    <!-- SWAP-PHONE 3 of 3 -->
-    <p class="footer-line"><a href="tel:+15555555555">(555) 555-5555</a></p>
+    <p class="footer-line"><a href="tel:+13107036003">310-703-6003</a></p>
+    <p class="footer-line"><a href="mailto:christopher@theweb3family.com">christopher@theweb3family.com</a></p>
   </div>
 </footer>
 

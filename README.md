@@ -2,7 +2,7 @@
 
 The marketing site for The Web3 Family (Clarke Tech Solutions, Inglewood, California).
 
-The homepage has one job: get the right visitor to request the free briefing. Built
+The homepage has one job: get the right visitor to book a 15 minute call. Built
 to grow past one page.
 
 **Read `CLAUDE.md` before changing anything.** It holds the audience, the design
@@ -87,10 +87,10 @@ Placeholders are intentional and must not be removed or replaced with substitute
 
 - `src="christopher.jpg"` in `src/index.njk`'s hero. Once the real photo exists,
   add it under `src/` and add it to the passthrough copy list in `.eleventy.js`.
-- The phone number, currently `(555) 555-5555` in three places: twice in
-  `src/index.njk`, once in the footer in `src/_includes/base.njk`.
 - The booking widget placeholder near the bottom of `src/index.njk`
   (`.panel-body`). The booking embed goes there.
-- The proof section, currently just an HTML comment in `src/index.njk`. Stays
-  empty until there is a real testimonial with a full name, organization, photo,
-  and written permission.
+
+The phone number (310-703-6003) and email (christopher@theweb3family.com) are
+real. The proof section's heading and single line are real, shipped copy too;
+they stay as they are until there is a real testimonial with a full name,
+organization, photo, and written permission.

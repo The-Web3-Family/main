@@ -8,9 +8,9 @@ Project instructions for theweb3family.com. Read this fully before changing anyt
 
 A marketing site for **The Web3 Family**, operated by **Christopher Clarke** in Inglewood, California. Built to grow past one page, on purpose.
 
-The business: Christopher handles the technology for people starting nonprofits. He researches their organization and funding landscape, hands them the findings for free, then builds their website, donation pages, and digital assets for a flat $3,000 a month, delivering finished work every Friday.
+The business: Christopher works with people who started a nonprofit after a full career in something else. Two hours a week, on a standing call, turns into something finished every Friday: a page, a sheet, a video, whatever that week's work calls for. Flat $3,000 a month, month to month, no contract.
 
-The homepage has exactly one job: get the right visitor to request the free briefing. Every change should make that easier, clearer, or more legible. Every other page carries the same design system and the same restraint, even once there are more of them.
+The homepage has exactly one job: get the right visitor to book a 15 minute call. Every change should make that easier, clearer, or more legible. Every other page carries the same design system and the same restraint, even once there are more of them.
 
 **Hosting:** Vercel, deploying automatically from this repo's main branch. Vercel runs `npm run build` and serves `_site`.
 **Files:** built with Eleventy. `src/` holds every page and the shared layout; `src/_includes/base.njk` is the one header, footer, and `<head>` every page uses; `src/styles.css` is the one design system every page shares. See section 9.
@@ -96,22 +96,19 @@ The order is the argument. Do not reorder blocks without asking.
 
 1. Header. Logo only. No navigation, no social links. Nothing leaves this page except the phone number.
 2. Portrait, name, and city. Before any claim. For this reader a real photo of a real person is the largest trust signal on the page.
-3. Headline: **You did the hard part. I'll handle the internet.**
-4. Subhead naming what he gets.
-5. First action: booking button plus phone button, then a short reassurance line.
-6. The problem, in his words. He will not believe you can help until he believes you understand.
-7. What Christopher does. Three promises.
-8. The price, plainly. Do not bury it. Missing pricing reads as a trap to this reader.
-9. How it works. Four steps, numbered because they happen in order.
-10. Proof. Currently a comment in the code. See section 8.
-11. What is in the free briefing. Four cards.
-12. Straight answers. The FAQ, which handles his last objections.
-13. Last action. Booking widget and phone number.
-14. Footer. Name, city, phone. Nothing else, no links, no social icons.
+3. Hero. Headline, one line naming what shows up every Friday, a line of concrete examples, the price and cadence in one line, the two buttons (book a call, call the phone number), and a reassurance line.
+4. The problem, in his words. He will not believe you can help until he believes you understand.
+5. What Christopher does. In his own voice, not a bulleted list.
+6. The price, plainly. Do not bury it. Missing pricing reads as a trap to this reader.
+7. How it works. Four steps, numbered because they happen in order.
+8. Proof. Names itself and says nothing more yet. See section 8.
+9. Straight answers. The FAQ, which handles his last objections.
+10. Last action. Booking widget and phone number.
+11. Footer. Name, business name, city, phone, and email. Nothing else, no other links, no social icons.
 
-**Locked copy.** Do not change the headline, the three promises, the price block, the button text, or the footer without an explicit request from Christopher.
+**Locked copy.** Do not change the headline, the price block, the button text, or the footer without an explicit request from Christopher.
 
-**Naming consistency.** The free research deliverable is called **the free briefing**. One name everywhere: site, booking widget, emails, documents. "Digital Intelligence Briefing" was retired as jargon and does not come back.
+**Naming consistency.** The offer is **a 15 minute call**. The earlier "free briefing" name, and "Digital Intelligence Briefing" before that, are both retired and do not come back. One name everywhere: site, booking widget, emails, documents.
 
 ---
 
@@ -165,12 +162,14 @@ Not compliance theater. For this reader it is the positioning. If he has to squi
 
 ## 8. Placeholders that are intentional
 
-Three slots in `src/index.njk` are waiting on real material. Do not fill them with substitutes.
+Two slots in `src/index.njk` are waiting on real material. Do not fill them with substitutes.
 
 - `src="christopher.jpg"` in the hero. Christopher's headshot goes here. Once it exists, add it under `src/` and add it to the passthrough copy list in `.eleventy.js`.
-- The phone number, currently a dummy, appears three times: twice in `src/index.njk`, once in the footer in `src/_includes/base.njk`.
 - The booking widget container near the bottom.
-- **Block 10, proof.** Currently a comment. It stays empty until there is a real testimonial with a full name, organization, photograph, one specific thing that changed, and written permission. Do not fill it with generic praise, credentials, or invented case studies. An empty page is more trustworthy than a vague endorsement.
+
+The phone number (310-703-6003) and email (christopher@theweb3family.com) are real, not placeholders.
+
+**Block 8, proof.** The section heading and one line ("This space belongs to my clients...") are real, shipped copy, not a placeholder to fill in generically. It stays exactly as it is until there is a real testimonial with a full name, organization, photograph, one specific thing that changed, and written permission, and then it gets replaced with that. Do not add generic praise, credentials, or invented case studies in the meantime. An empty-feeling section is more trustworthy than a vague endorsement.
 
 ---
 
@@ -194,7 +193,7 @@ Three slots in `src/index.njk` are waiting on real material. Do not fill them wi
 - Explain what changed and why in plain language. Christopher reviews on a phone.
 - When adding a section to a page, match the existing rhythm: a `<section>` with a top border, a `.wrap` container, an `h2`, and either `.split` prose or a `.cards` grid.
 - **Adding a new page:** create a file under `src/` with `layout: base.njk` in its front matter, a `title`, and a `description`. The header and footer come along automatically from `base.njk`. Write its sections using the same rhythm as `src/index.njk`. Do not add a navigation link for it anywhere without an explicit conversation first: the whole site is built around having nothing to click but the phone number and the one call to action, and a nav bar undoes that on every page at once, not just the new one.
-- **Adding an article:** copy `article-template.md` (repo root) into `src/articles/`, fill in the front matter, write the body in Markdown, done. It appears on `/articles/` and gets its own page automatically, no template edits needed. Every article carries the same header, footer, and a "Request the free briefing" button at the end. Articles are not linked from anywhere yet (see the next point): for now they're reachable only by direct URL.
+- **Adding an article:** copy `article-template.md` (repo root) into `src/articles/`, fill in the front matter, write the body in Markdown, done. It appears on `/articles/` and gets its own page automatically, no template edits needed. Every article carries the same header, footer, and a "Book a 15 minute call" button at the end. Articles are not linked from anywhere yet (see the next point): for now they're reachable only by direct URL.
 - **`/articles/` has no link pointing at it yet**, on purpose, until there's an explicit decision about how visitors should find it. Do not add one (footer, a homepage mention, anything) without asking first.
 - Numbered lists are only for real sequences. Do not add decorative numbering elsewhere.
 - Do not add sections speculatively. No testimonials until they exist. No logo bars until there are logos. No statistics that have not been verified.
