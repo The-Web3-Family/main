@@ -6,3 +6,13 @@
 
 # jetbrains setting folder
 .idea/
+
+# Claude Code local session state (personal settings, agent worktrees)
+.claude/
+
+# dependencies
+node_modules/
+
+# Eleventy build output
+_site/
+.cache/

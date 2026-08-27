@@ -6,14 +6,14 @@ Project instructions for theweb3family.com. Read this fully before changing anyt
 
 ## 1. The project
 
-A single page marketing site for **The Web3 Family**, operated by **Christopher Clarke** in Inglewood, California.
+A marketing site for **The Web3 Family**, operated by **Christopher Clarke** in Inglewood, California. Built to grow past one page, on purpose.
 
-The business: Christopher handles the technology for people starting nonprofits. He researches their organization and funding landscape, hands them the findings for free, then builds their website, donation pages, and digital assets for a flat $3,000 a month, delivering finished work every Friday.
+The business: Christopher works with people who started a nonprofit after a full career in something else. Two hours a week, on a standing call, turns into something finished every Friday: a page, a sheet, a video, whatever that week's work calls for. Flat $3,000 a month, month to month, no contract.
 
-The page has exactly one job: get the right visitor to request the free Briefing. Every change should make that easier, clearer, or more legible.
+The homepage has exactly one job: get the right visitor to book a 15 minute call. Every change should make that easier, clearer, or more legible. Every other page carries the same design system and the same restraint, even once there are more of them.
 
-**Hosting:** Vercel, deploying automatically from this repo's main branch.
-**Files:** `index.html` is the whole site. One file, no build step.
+**Hosting:** Vercel, deploying automatically from this repo's main branch. Vercel runs `npm run build` and serves `_site`.
+**Files:** built with Eleventy. `src/` holds every page and the shared layout; `src/_includes/base.njk` is the one header, footer, and `<head>` every page uses; `src/styles.css` is the one design system every page shares. See section 9.
 
 ---
 
@@ -21,7 +21,7 @@ The page has exactly one job: get the right visitor to request the free Briefing
 
 This is the most important section, because it invalidates most default web design instincts.
 
-**A founder aged roughly 60 to 75.** Usually a man. He spent thirty or forty years building a career somewhere else, in trades, ministry, education, law enforcement, corporate work, the military, or medicine. He recently started a grassroots nonprofit. He is retired or semi retired with stable income. The organization is pre launch to about three years old, often with no paid staff.
+**A founder aged roughly 60 to 90.** Usually a man. He spent thirty or forty years building a career somewhere else, in trades, ministry, education, law enforcement, corporate work, the military, or medicine. He recently started a grassroots nonprofit. He is retired or semi retired with stable income. The organization is pre launch to about three years old, often with no paid staff.
 
 He is not a beginner at anything except the internet.
 
@@ -86,7 +86,7 @@ The plain spoken voice is the positioning. Do not punch it up, polish it, or mak
 - Respect his experience where it is natural. "You spent a career building something."
 - Sentence case for buttons and labels.
 
-**The read aloud test:** before any copy change ships, read it aloud imagining a 68 year old hearing it. If a word makes him pause, replace it. If a sentence needs a second read, split it.
+**The read aloud test:** before any copy change ships, read it aloud imagining an 87 year old hearing it. If a word makes him pause, replace it. If a sentence needs a second read, split it.
 
 ---
 
@@ -96,22 +96,20 @@ The order is the argument. Do not reorder blocks without asking.
 
 1. Header. Logo only. No navigation, no social links. Nothing leaves this page except the phone number.
 2. Portrait, name, and city. Before any claim. For this reader a real photo of a real person is the largest trust signal on the page.
-3. Headline: **You did the hard part. I'll handle the internet.**
-4. Subhead naming what he gets.
-5. First action: booking button plus phone button, then a short reassurance line.
-6. The problem, in his words. He will not believe you can help until he believes you understand.
-7. What Christopher does. Three promises.
-8. The price, plainly. Do not bury it. Missing pricing reads as a trap to this reader.
-9. How it works. Four steps, numbered because they happen in order.
-10. Proof. Currently a comment in the code. See section 8.
-11. What is in the free briefing. Four cards.
-12. Straight answers. The FAQ, which handles his last objections.
-13. Last action. Booking widget and phone number.
-14. Footer. Name, city, phone. Nothing else, no links, no social icons.
+3. Hero. A two-line headline, one line naming who he works with and what happens every Friday, the price and cadence in one line, the booking button as the one dominant action, the phone number beside it as a small secondary link, and a one-line delivery-record credibility note.
+4. The problem, in his words. He will not believe you can help until he believes you understand.
+5. What Christopher does. In his own voice, not a bulleted list.
+6. The price, plainly. Do not bury it. Missing pricing reads as a trap to this reader.
+7. How it works. Four steps, numbered because they happen in order.
+8. Straight answers. The FAQ, which handles his last objections.
+9. Last action. Booking widget and phone number.
+10. Footer. Name, business name, city, phone, and email. Nothing else, no other links, no social icons.
 
-**Locked copy.** Do not change the headline, the three promises, the price block, the button text, or the footer without an explicit request from Christopher.
+There is no Proof section on the page right now. See section 8.
 
-**Naming consistency.** The free research deliverable is called **the free briefing**. One name everywhere: site, booking widget, emails, documents. "Digital Intelligence Briefing" was retired as jargon and does not come back.
+**Locked copy.** Do not change the headline, the price block, the button text, or the footer without an explicit request from Christopher.
+
+**Naming consistency.** The offer is **a 15 minute call**. The earlier "free briefing" name, and "Digital Intelligence Briefing" before that, are both retired and do not come back. One name everywhere: site, booking widget, emails, documents. The primary booking button and the panel header both read "Book my 15 minute call," first person, since it's the visitor's own words being reflected back to them. The phone number, being a secondary link rather than a button, stays third person: "or call [number]."
 
 ---
 
@@ -165,23 +163,22 @@ Not compliance theater. For this reader it is the positioning. If he has to squi
 
 ## 8. Placeholders that are intentional
 
-Three slots in `index.html` are waiting on real material. Do not fill them with substitutes.
+No slot in `src/index.njk` is waiting on placeholder material anymore. The portrait (`src/christopher.jpg`), the phone number (310-703-6003), the email (christopher@theweb3family.com), and the booking panel (a real Calendly inline embed) are all real.
 
-- `src="christopher.jpg"` in the hero. Christopher's headshot goes here.
-- The phone number, currently a dummy, appears twice.
-- The booking widget container near the bottom.
-- **Block 10, proof.** Currently a comment. It stays empty until there is a real testimonial with a full name, organization, photograph, one specific thing that changed, and written permission. Do not fill it with generic praise, credentials, or invented case studies. An empty page is more trustworthy than a vague endorsement.
+**Proof.** There is no Proof section on the page right now. It was removed rather than left as a placeholder, since there's no real testimonial to point to yet. Add it back only once there's a real one: full name, organization, photograph, one specific thing that changed, and written permission. Don't fill the gap with generic praise, credentials, or an invented case study in the meantime; no section beats a vague one. The one already-verified fact that used to live there ("work has landed every Friday since March") now lives in the hero as a short credibility line instead.
 
 ---
 
 ## 9. Technical constraints
 
-- Static site. One `index.html` with an inline `<style>` block. No build step, no bundler, no framework, no npm, no package.json. Do not introduce any of these.
-- No JavaScript beyond the third party booking embed. No analytics libraries, animation libraries, sliders, or cookie banners.
-- No localStorage, sessionStorage, or cookies. Nothing that would require a consent banner.
-- External dependencies are Google Fonts and the booking embed. That is the whole list.
-- If analytics are added later, use a cookieless option that needs no consent banner.
-- Keep everything in one file unless it passes roughly 800 lines, then ask before splitting.
+- **Built with Eleventy**, deliberately, so a design-system-wide change (a color, a spacing value, the type scale) is one edit instead of one edit per page. That was the entire reason this site moved off a single static file: it started growing past one page. Do not reach for anything heavier (Astro, Next.js, a component framework) without asking. This project already tried Astro twice before landing here.
+- `src/_includes/base.njk` is the shared layout: the `<head>`, the header, and the footer. Every page uses it. Do not duplicate the header or footer markup into a page file.
+- `src/styles.css` is the one stylesheet every page links. A style that only one page needs still belongs in this file, scoped with a class; do not add a second stylesheet or inline a `<style>` block into a page.
+- Ships zero client-side JavaScript beyond the booking embed and Microsoft Clarity (analytics). No animation libraries, sliders, or other analytics tools. Eleventy's job is finished at build time; nothing it does should add a runtime script beyond those two.
+- Microsoft Clarity is loaded on every page, by explicit request, even though it sets cookies for session replay and heatmaps. That's a deliberate exception to the site's general no-cookies posture, made knowingly, without a consent banner. Don't add a banner speculatively and don't treat this as license to add other tracking without the same explicit ask.
+- Beyond Clarity's cookies, no localStorage, sessionStorage, or other cookies. Nothing else that would require a consent banner.
+- External dependencies are Google Fonts, the booking embed, and Microsoft Clarity. That is the whole list of things a visitor's browser talks to. `@11ty/eleventy` is a dev-time dependency only; it never ships to the browser.
+- Build: `npm run build` outputs static files to `_site/`. `npm run dev` serves it locally with live reload. There is no other build step and no server at runtime; Vercel serves what Eleventy generates, nothing more.
 
 ---
 
@@ -190,7 +187,10 @@ Three slots in `index.html` are waiting on real material. Do not fill them with 
 - Small, single purpose changes. One concern per pull request.
 - Never rewrite sections that were not asked about. If you notice something else worth fixing, say so in the pull request description instead of changing it.
 - Explain what changed and why in plain language. Christopher reviews on a phone.
-- When adding a section, match the existing rhythm: a `<section>` with a top border, a `.wrap` container, an `h2`, and either prose or a `.cards` grid.
+- When adding a section to a page, match the existing rhythm: a `<section>` with a top border, a `.wrap` container, an `h2`, and either `.split` prose or a `.cards` grid.
+- **Adding a new page:** create a file under `src/` with `layout: base.njk` in its front matter, a `title`, and a `description`. The header and footer come along automatically from `base.njk`. Write its sections using the same rhythm as `src/index.njk`. Do not add a navigation link for it anywhere without an explicit conversation first: the whole site is built around having nothing to click but the phone number and the one call to action, and a nav bar undoes that on every page at once, not just the new one.
+- **Adding an article:** copy `article-template.md` (repo root) into `src/articles/`, fill in the front matter, write the body in Markdown, done. It appears on `/articles/` and gets its own page automatically, no template edits needed. Every article carries the same header, footer, and a "Book my 15 minute call" button at the end. Articles are not linked from anywhere yet (see the next point): for now they're reachable only by direct URL.
+- **`/articles/` has no link pointing at it yet**, on purpose, until there's an explicit decision about how visitors should find it. Do not add one (footer, a homepage mention, anything) without asking first.
 - Numbered lists are only for real sequences. Do not add decorative numbering elsewhere.
 - Do not add sections speculatively. No testimonials until they exist. No logo bars until there are logos. No statistics that have not been verified.
 - If a request would break a rule in this file, flag it and ask.
@@ -225,5 +225,5 @@ Confirm every time:
 - Does it read cleanly at 375px width?
 - Is all text 18px or larger?
 - Does every color pair meet the ratios in section 6?
-- Would a 68 year old understand every word?
+- Would an 87 year old understand every word?
 - Does the page still have exactly one goal and one action?
