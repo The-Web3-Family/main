@@ -21,7 +21,7 @@ The homepage has exactly one job: get the right visitor to book a 15 minute call
 
 This is the most important section, because it invalidates most default web design instincts.
 
-**A founder aged roughly 60 to 75.** Usually a man. He spent thirty or forty years building a career somewhere else, in trades, ministry, education, law enforcement, corporate work, the military, or medicine. He recently started a grassroots nonprofit. He is retired or semi retired with stable income. The organization is pre launch to about three years old, often with no paid staff.
+**A founder aged roughly 60 to 90.** Usually a man. He spent thirty or forty years building a career somewhere else, in trades, ministry, education, law enforcement, corporate work, the military, or medicine. He recently started a grassroots nonprofit. He is retired or semi retired with stable income. The organization is pre launch to about three years old, often with no paid staff.
 
 He is not a beginner at anything except the internet.
 
@@ -86,7 +86,7 @@ The plain spoken voice is the positioning. Do not punch it up, polish it, or mak
 - Respect his experience where it is natural. "You spent a career building something."
 - Sentence case for buttons and labels.
 
-**The read aloud test:** before any copy change ships, read it aloud imagining a 68 year old hearing it. If a word makes him pause, replace it. If a sentence needs a second read, split it.
+**The read aloud test:** before any copy change ships, read it aloud imagining an 87 year old hearing it. If a word makes him pause, replace it. If a sentence needs a second read, split it.
 
 ---
 
@@ -96,12 +96,12 @@ The order is the argument. Do not reorder blocks without asking.
 
 1. Header. Logo only. No navigation, no social links. Nothing leaves this page except the phone number.
 2. Portrait, name, and city. Before any claim. For this reader a real photo of a real person is the largest trust signal on the page.
-3. Hero. Headline, one line naming what shows up every Friday, a line of concrete examples, the price and cadence in one line, the two buttons (book a call, call the phone number), and a reassurance line.
+3. Hero. A two-line headline, one line naming who he works with and what happens every Friday, the price and cadence in one line, the two buttons (book a call, call the phone number), and a reassurance line.
 4. The problem, in his words. He will not believe you can help until he believes you understand.
 5. What Christopher does. In his own voice, not a bulleted list.
 6. The price, plainly. Do not bury it. Missing pricing reads as a trap to this reader.
 7. How it works. Four steps, numbered because they happen in order.
-8. Proof. Names itself and says nothing more yet. See section 8.
+8. Proof. Names itself, states the delivery record, and says nothing more yet. See section 8.
 9. Straight answers. The FAQ, which handles his last objections.
 10. Last action. Booking widget and phone number.
 11. Footer. Name, business name, city, phone, and email. Nothing else, no other links, no social icons.
@@ -168,7 +168,7 @@ One slot in `src/index.njk` is waiting on real material. Do not fill it with a s
 
 The portrait (`src/christopher.jpg`), the phone number (310-703-6003), and the email (christopher@theweb3family.com) are real, not placeholders.
 
-**Block 8, proof.** The section heading and one line ("This space belongs to my clients...") are real, shipped copy, not a placeholder to fill in generically. It stays exactly as it is until there is a real testimonial with a full name, organization, photograph, one specific thing that changed, and written permission, and then it gets replaced with that. Do not add generic praise, credentials, or invented case studies in the meantime. An empty-feeling section is more trustworthy than a vague endorsement.
+**Block 8, proof.** The section heading and its two lines (the delivery-record line and "This space belongs to them...") are real, shipped copy, not a placeholder to fill in generically. It stays exactly as it is until there is a real testimonial with a full name, organization, photograph, one specific thing that changed, and written permission, and then it gets replaced with that. Do not add generic praise, credentials, or invented case studies in the meantime. An empty-feeling section is more trustworthy than a vague endorsement.
 
 ---
 
@@ -228,5 +228,5 @@ Confirm every time:
 - Does it read cleanly at 375px width?
 - Is all text 18px or larger?
 - Does every color pair meet the ratios in section 6?
-- Would a 68 year old understand every word?
+- Would an 87 year old understand every word?
 - Does the page still have exactly one goal and one action?
