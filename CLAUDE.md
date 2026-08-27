@@ -101,11 +101,10 @@ The order is the argument. Do not reorder blocks without asking.
 5. What Christopher does. In his own voice, not a bulleted list.
 6. The price, plainly. Do not bury it. Missing pricing reads as a trap to this reader.
 7. How it works. Four steps, numbered because they happen in order.
-8. Straight answers. The FAQ, which handles his last objections.
-9. Last action. Booking widget and phone number.
-10. Footer. Name, business name, city, phone, and email. Nothing else, no other links, no social icons.
-
-There is no Proof section on the page right now. See section 8.
+8. Proof. Three anonymized client stories, one line each, linking out to their own case study pages. See section 8.
+9. Straight answers. The FAQ, which handles his last objections.
+10. Last action. Booking widget and phone number.
+11. Footer. Name, business name, city, phone, and email. Nothing else, no other links, no social icons.
 
 **Locked copy.** Do not change the headline, the price block, the button text, or the footer without an explicit request from Christopher.
 
@@ -165,7 +164,7 @@ Not compliance theater. For this reader it is the positioning. If he has to squi
 
 No slot in `src/index.njk` is waiting on placeholder material anymore. The portrait (`src/christopher.jpg`), the phone number (310-703-6003), the email (christopher@theweb3family.com), and the booking panel (a real Calendly inline embed) are all real.
 
-**Proof.** There is no Proof section on the page right now. It was removed rather than left as a placeholder, since there's no real testimonial to point to yet. Add it back only once there's a real one: full name, organization, photograph, one specific thing that changed, and written permission. Don't fill the gap with generic praise, credentials, or an invented case study in the meantime; no section beats a vague one. The one already-verified fact that used to live there ("work has landed every Friday since March") now lives in the hero as a short credibility line instead.
+**Proof.** Points to three real, anonymized case study pages under `src/case-studies/`, built from Christopher's own weekly delivery logs. Names stay off both the homepage cards and the case study pages themselves until each client signs off in writing; that's the deliberate anonymization policy set in the source drafts, not a placeholder waiting on something. Once a client does sign off, that page gets their name, organization, and photo added: it doesn't need a new page built. Don't add a fourth case study or embellish a real one with anything not in the delivery logs.
 
 ---
 
@@ -191,6 +190,7 @@ No slot in `src/index.njk` is waiting on placeholder material anymore. The portr
 - **Adding a new page:** create a file under `src/` with `layout: base.njk` in its front matter, a `title`, and a `description`. The header and footer come along automatically from `base.njk`. Write its sections using the same rhythm as `src/index.njk`. Do not add a navigation link for it anywhere without an explicit conversation first: the whole site is built around having nothing to click but the phone number and the one call to action, and a nav bar undoes that on every page at once, not just the new one.
 - **Adding an article:** copy `article-template.md` (repo root) into `src/articles/`, fill in the front matter, write the body in Markdown, done. It appears on `/articles/` and gets its own page automatically, no template edits needed. Every article carries the same header, footer, and a "Book my 15 minute call" button at the end. Articles are not linked from anywhere yet (see the next point): for now they're reachable only by direct URL.
 - **`/articles/` has no link pointing at it yet**, on purpose, until there's an explicit decision about how visitors should find it. Do not add one (footer, a homepage mention, anything) without asking first.
+- **Case studies** live at `src/case-studies/*.njk`, one hand-written page per client, not a collection like articles: an eyebrow and headline, a `.case-facts` strip (client type, status, started), the story, a "what this proves" block, and a weekly delivery log with the most recent six weeks visible and everything earlier behind a native `<details>`/`<summary>` disclosure (no JavaScript). Log entries use `.log-num` for the week number, echoing the numbered rhythm from "how it works" on the homepage rather than reading as a flat list. The homepage's Proof section links to all three by name. Follow the same rhythm as the existing three when adding another: reuse the `.prose`, `.log-*`, and `.case-facts` classes in `src/styles.css` rather than inventing new ones.
 - Numbered lists are only for real sequences. Do not add decorative numbering elsewhere.
 - Do not add sections speculatively. No testimonials until they exist. No logo bars until there are logos. No statistics that have not been verified.
 - If a request would break a rule in this file, flag it and ask.
@@ -210,7 +210,7 @@ Keep off this site: HIPAA, GLBA, PII, compliance, cybersecurity audits, CRM migr
 - Any promise that a grant will cover the cost, or that the service is free to the organization. No client has ever paid because of a grant. That model is untested.
 - Regulatory compliance capability claims of any kind.
 - Outcome metrics that have not been measured, such as hours saved or percentage increases in donations.
-- Client names, logos, or quotes without written permission.
+- Client names or logos without written permission. Anonymized quotes and delivery-log detail are fine (that's how the case studies work), as long as nothing in them identifies who the client is.
 - LLC status, DBA registration, certifications, UEI, or CAGE codes that are not yet actually granted. The LLC and DBA were still in formation as of August 2026. List nothing as pending that has no application on file.
 - Anything about cryptocurrency, tokens, or blockchain other than the FAQ's explicit denial.
 
