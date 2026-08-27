@@ -20,6 +20,11 @@ src/
   articles/
     index.njk       the /articles/ listing page
     *.md            one file per published article
+  case-studies/
+    the-founder.njk    one hand-written page per client, not a collection
+    the-mentor.njk
+    the-inventor.njk
+  christopher.jpg   the portrait
   styles.css        the one stylesheet every page shares
   favicon.svg
   favicon.ico
@@ -64,6 +69,16 @@ Markdown, done. It shows up on `/articles/` and builds automatically. Nothing
 currently links to `/articles/` itself, so it's reachable by direct URL only,
 on purpose, until there's a decision about how visitors should find it.
 
+## Adding a case study
+
+Case studies aren't a collection like articles; each one is a hand-written
+page under `src/case-studies/`. Copy the closest existing one as a starting
+point and reuse the `.prose`, `.log-*`, and `.case-meta` classes already in
+`src/styles.css` rather than inventing new ones. Names stay off the page
+until the client signs off in writing; when they do, add their name and
+photo to the existing page rather than creating a new one. Link the new
+page from the homepage's Proof section (`src/index.njk`).
+
 ## Deploying
 
 Vercel builds from `main` automatically: `npm run build`, output directory `_site`.
@@ -78,7 +93,7 @@ Confirm every time:
 1. Reads cleanly at 375px width.
 2. All text is 18px or larger.
 3. Every color pair meets the ratios in CLAUDE.md section 6.
-4. A 68-year-old would understand every word.
+4. An 87-year-old would understand every word.
 5. Each page still has exactly one goal and one action.
 
 ## Open slots
@@ -87,7 +102,6 @@ None. The portrait (`src/christopher.jpg`), the phone number
 (310-703-6003), the email (christopher@theweb3family.com), and the booking
 panel (a real Calendly inline embed in `src/index.njk`) are all real.
 
-There's no Proof section on the homepage right now; it was removed rather
-than left as a placeholder, since there's no real testimonial yet. Add it
-back only once there's a real one: full name, organization, photo, one
-specific thing that changed, and written permission.
+The homepage's Proof section links to three real, anonymized case studies
+under `src/case-studies/`. Names stay off all four pages until each client
+signs off in writing; that's a deliberate policy, not a placeholder.

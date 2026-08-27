@@ -140,6 +140,8 @@ p.figure{
 .cards{display:grid;grid-template-columns:1fr;gap:18px;margin-top:30px}
 .card{background:var(--cream);border:1px solid var(--hair);border-top:4px solid var(--orange);padding:22px}
 .card p{margin:0}
+a.card{display:block;text-decoration:none}
+a.card:hover{border-top-color:var(--rust)}
 
 /* ---------- faq ---------- */
 .faq-list{display:flex;flex-direction:column}
@@ -203,19 +205,46 @@ footer p:last-child{margin-bottom:0}
   .booking-wrap{max-width:620px}
 }
 
+/* ---------- prose, shared by articles and case studies ---------- */
+.prose h1{margin-bottom:24px}
+.prose :where(h2,h3){margin-top:1.6em}
+.prose ul,.prose ol{margin:0 0 1.15rem;padding-left:1.4em;max-width:62ch}
+.prose li{margin-bottom:.4em}
+.prose blockquote{margin:0 0 1.15rem;padding-left:20px;border-left:3px solid var(--forest);color:var(--muted)}
+.content-cta{margin-top:40px}
+
 /* ---------- articles ---------- */
 .article-date{font-size:18px;color:var(--muted);margin:0 0 8px}
-.article h1{margin-bottom:24px}
-.article :where(h2,h3){margin-top:1.6em}
-.article ul,.article ol{margin:0 0 1.15rem;padding-left:1.4em;max-width:62ch}
-.article li{margin-bottom:.4em}
-.article blockquote{margin:0 0 1.15rem;padding-left:20px;border-left:3px solid var(--forest);color:var(--muted)}
-.article-cta{margin-top:40px}
 
 .article-list{display:flex;flex-direction:column;margin-top:30px}
 .article-list-item{padding:24px 0;border-top:1px solid var(--hair)}
 .article-list-item:last-child{border-bottom:1px solid var(--hair)}
 .article-list-item h2{margin-bottom:6px}
 .article-list-item p{margin:0}
+
+/* ---------- case studies ---------- */
+.case-meta{font-size:18px;color:var(--muted);margin:0 0 8px}
+
+.log-status{display:flex;align-items:center;gap:10px;margin:32px 0 22px;font-size:18px;color:var(--muted)}
+.log-dot{width:11px;height:11px;border-radius:50%;background:var(--forest);flex:none}
+
+.log-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.log-entry{padding:16px 0;border-top:1px solid var(--hair)}
+.log-entry:last-child{border-bottom:1px solid var(--hair)}
+.log-when{font-weight:700;color:var(--forest);margin:0 0 4px}
+.log-entry p:last-child{margin:0}
+.log-gap{color:var(--muted);font-style:italic}
+
+details.log-more{margin:0 0 4px}
+details.log-more summary{
+  cursor:pointer;font-weight:700;color:var(--forest);padding:14px 0;
+  list-style:none;font-size:18px;
+}
+details.log-more summary::-webkit-details-marker{display:none}
+details.log-more summary::before{content:"+ ";color:var(--rust)}
+details.log-more[open] summary::before{content:"– "}
+details.log-more summary:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+
+.log-next{font-size:18px;color:var(--muted);font-style:italic;margin:22px 0 0}
 
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
