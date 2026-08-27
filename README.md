@@ -85,7 +85,9 @@ Confirm every time:
 
 None. The portrait (`src/christopher.jpg`), the phone number
 (310-703-6003), the email (christopher@theweb3family.com), and the booking
-panel (a real Calendly inline embed in `src/index.njk`) are all real. The
-proof section's heading and its two lines are real, shipped copy too; they
-stay as they are until there is a real testimonial with a full name,
-organization, photo, and written permission.
+panel (a real Calendly inline embed in `src/index.njk`) are all real.
+
+There's no Proof section on the homepage right now; it was removed rather
+than left as a placeholder, since there's no real testimonial yet. Add it
+back only once there's a real one: full name, organization, photo, one
+specific thing that changed, and written permission.

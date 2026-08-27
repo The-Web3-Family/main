@@ -100,6 +100,8 @@ h1{
 .tel{background:transparent;color:var(--forest);min-height:60px;font-size:20px}
 .tel:hover{background:var(--cream-deep)}
 .band .tel:hover{background:var(--cream)}
+.call-alt{font-size:18px;color:var(--muted);margin:0 0 14px}
+.call-alt a{color:var(--forest)}
 .reassure{font-size:18px;color:var(--muted);margin:0}
 a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 
@@ -179,11 +181,12 @@ footer p:last-child{margin-bottom:0}
   .me span{font-size:19px}
   h1{margin-bottom:26px}
 
-  .actions{display:flex;gap:16px}
+  .actions{display:flex;align-items:center;gap:20px}
   .cta,.tel{flex:1}
-  .cta{min-height:72px}
+  .cta{min-height:72px;flex:0 0 auto}
   .cta span,.tel{font-size:21px}
   .tel{min-height:62px}
+  .call-alt{margin:0}
 
   .price-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:56px;align-items:start}
   .price-grid p{max-width:none}

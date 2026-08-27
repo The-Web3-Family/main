@@ -96,19 +96,20 @@ The order is the argument. Do not reorder blocks without asking.
 
 1. Header. Logo only. No navigation, no social links. Nothing leaves this page except the phone number.
 2. Portrait, name, and city. Before any claim. For this reader a real photo of a real person is the largest trust signal on the page.
-3. Hero. A two-line headline, one line naming who he works with and what happens every Friday, the price and cadence in one line, and the two buttons (book a call, call the phone number).
+3. Hero. A two-line headline, one line naming who he works with and what happens every Friday, the price and cadence in one line, the booking button as the one dominant action, the phone number beside it as a small secondary link, and a one-line delivery-record credibility note.
 4. The problem, in his words. He will not believe you can help until he believes you understand.
 5. What Christopher does. In his own voice, not a bulleted list.
 6. The price, plainly. Do not bury it. Missing pricing reads as a trap to this reader.
 7. How it works. Four steps, numbered because they happen in order.
-8. Proof. Names itself, states the delivery record, and says nothing more yet. See section 8.
-9. Straight answers. The FAQ, which handles his last objections.
-10. Last action. Booking widget and phone number.
-11. Footer. Name, business name, city, phone, and email. Nothing else, no other links, no social icons.
+8. Straight answers. The FAQ, which handles his last objections.
+9. Last action. Booking widget and phone number.
+10. Footer. Name, business name, city, phone, and email. Nothing else, no other links, no social icons.
+
+There is no Proof section on the page right now. See section 8.
 
 **Locked copy.** Do not change the headline, the price block, the button text, or the footer without an explicit request from Christopher.
 
-**Naming consistency.** The offer is **a 15 minute call**. The earlier "free briefing" name, and "Digital Intelligence Briefing" before that, are both retired and do not come back. One name everywhere: site, booking widget, emails, documents.
+**Naming consistency.** The offer is **a 15 minute call**. The earlier "free briefing" name, and "Digital Intelligence Briefing" before that, are both retired and do not come back. One name everywhere: site, booking widget, emails, documents. The primary booking button and the panel header both read "Book my 15 minute call," first person, since it's the visitor's own words being reflected back to them. The phone number, being a secondary link rather than a button, stays third person: "or call [number]."
 
 ---
 
@@ -164,7 +165,7 @@ Not compliance theater. For this reader it is the positioning. If he has to squi
 
 No slot in `src/index.njk` is waiting on placeholder material anymore. The portrait (`src/christopher.jpg`), the phone number (310-703-6003), the email (christopher@theweb3family.com), and the booking panel (a real Calendly inline embed) are all real.
 
-**Block 8, proof.** The section heading and its two lines (the delivery-record line and "This space belongs to them...") are real, shipped copy, not a placeholder to fill in generically. It stays exactly as it is until there is a real testimonial with a full name, organization, photograph, one specific thing that changed, and written permission, and then it gets replaced with that. Do not add generic praise, credentials, or invented case studies in the meantime. An empty-feeling section is more trustworthy than a vague endorsement.
+**Proof.** There is no Proof section on the page right now. It was removed rather than left as a placeholder, since there's no real testimonial to point to yet. Add it back only once there's a real one: full name, organization, photograph, one specific thing that changed, and written permission. Don't fill the gap with generic praise, credentials, or an invented case study in the meantime; no section beats a vague one. The one already-verified fact that used to live there ("work has landed every Friday since March") now lives in the hero as a short credibility line instead.
 
 ---
 
@@ -188,7 +189,7 @@ No slot in `src/index.njk` is waiting on placeholder material anymore. The portr
 - Explain what changed and why in plain language. Christopher reviews on a phone.
 - When adding a section to a page, match the existing rhythm: a `<section>` with a top border, a `.wrap` container, an `h2`, and either `.split` prose or a `.cards` grid.
 - **Adding a new page:** create a file under `src/` with `layout: base.njk` in its front matter, a `title`, and a `description`. The header and footer come along automatically from `base.njk`. Write its sections using the same rhythm as `src/index.njk`. Do not add a navigation link for it anywhere without an explicit conversation first: the whole site is built around having nothing to click but the phone number and the one call to action, and a nav bar undoes that on every page at once, not just the new one.
-- **Adding an article:** copy `article-template.md` (repo root) into `src/articles/`, fill in the front matter, write the body in Markdown, done. It appears on `/articles/` and gets its own page automatically, no template edits needed. Every article carries the same header, footer, and a "Book a 15 minute call" button at the end. Articles are not linked from anywhere yet (see the next point): for now they're reachable only by direct URL.
+- **Adding an article:** copy `article-template.md` (repo root) into `src/articles/`, fill in the front matter, write the body in Markdown, done. It appears on `/articles/` and gets its own page automatically, no template edits needed. Every article carries the same header, footer, and a "Book my 15 minute call" button at the end. Articles are not linked from anywhere yet (see the next point): for now they're reachable only by direct URL.
 - **`/articles/` has no link pointing at it yet**, on purpose, until there's an explicit decision about how visitors should find it. Do not add one (footer, a homepage mention, anything) without asking first.
 - Numbered lists are only for real sequences. Do not add decorative numbering elsewhere.
 - Do not add sections speculatively. No testimonials until they exist. No logo bars until there are logos. No statistics that have not been verified.
