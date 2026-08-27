@@ -96,7 +96,7 @@ The order is the argument. Do not reorder blocks without asking.
 
 1. Header. Logo only. No navigation, no social links. Nothing leaves this page except the phone number.
 2. Portrait, name, and city. Before any claim. For this reader a real photo of a real person is the largest trust signal on the page.
-3. Hero. A two-line headline, one line naming who he works with and what happens every Friday, the price and cadence in one line, the two buttons (book a call, call the phone number), and a reassurance line.
+3. Hero. A two-line headline, one line naming who he works with and what happens every Friday, the price and cadence in one line, and the two buttons (book a call, call the phone number).
 4. The problem, in his words. He will not believe you can help until he believes you understand.
 5. What Christopher does. In his own voice, not a bulleted list.
 6. The price, plainly. Do not bury it. Missing pricing reads as a trap to this reader.
