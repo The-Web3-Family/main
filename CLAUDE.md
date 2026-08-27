@@ -162,11 +162,7 @@ Not compliance theater. For this reader it is the positioning. If he has to squi
 
 ## 8. Placeholders that are intentional
 
-One slot in `src/index.njk` is waiting on real material. Do not fill it with a substitute.
-
-- The booking widget container near the bottom.
-
-The portrait (`src/christopher.jpg`), the phone number (310-703-6003), and the email (christopher@theweb3family.com) are real, not placeholders.
+No slot in `src/index.njk` is waiting on placeholder material anymore. The portrait (`src/christopher.jpg`), the phone number (310-703-6003), the email (christopher@theweb3family.com), and the booking panel (a real Calendly inline embed) are all real.
 
 **Block 8, proof.** The section heading and its two lines (the delivery-record line and "This space belongs to them...") are real, shipped copy, not a placeholder to fill in generically. It stays exactly as it is until there is a real testimonial with a full name, organization, photograph, one specific thing that changed, and written permission, and then it gets replaced with that. Do not add generic praise, credentials, or invented case studies in the meantime. An empty-feeling section is more trustworthy than a vague endorsement.
 

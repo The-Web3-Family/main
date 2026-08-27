@@ -154,6 +154,8 @@ p.figure{
 }
 .panel-body{min-height:280px;display:flex;align-items:center;justify-content:center;padding:26px;text-align:center}
 .panel-body p{font-size:18px;color:var(--muted);margin:0}
+.panel-body-embed{display:block;padding:0}
+.panel-body-embed .calendly-inline-widget{width:100%}
 
 /* ---------- footer ---------- */
 footer{background:var(--forest);color:var(--cream);padding:44px 0}
