@@ -173,10 +173,10 @@ No slot in `src/index.njk` is waiting on placeholder material anymore. The portr
 - **Built with Eleventy**, deliberately, so a design-system-wide change (a color, a spacing value, the type scale) is one edit instead of one edit per page. That was the entire reason this site moved off a single static file: it started growing past one page. Do not reach for anything heavier (Astro, Next.js, a component framework) without asking. This project already tried Astro twice before landing here.
 - `src/_includes/base.njk` is the shared layout: the `<head>`, the header, and the footer. Every page uses it. Do not duplicate the header or footer markup into a page file.
 - `src/styles.css` is the one stylesheet every page links. A style that only one page needs still belongs in this file, scoped with a class; do not add a second stylesheet or inline a `<style>` block into a page.
-- Ships zero client-side JavaScript beyond the third-party booking embed. No analytics libraries, animation libraries, sliders, or cookie banners. Eleventy's job is finished at build time; nothing it does should add a runtime script.
-- No localStorage, sessionStorage, or cookies. Nothing that would require a consent banner.
-- External dependencies are Google Fonts and the booking embed. That is the whole list of things a visitor's browser talks to. `@11ty/eleventy` is a dev-time dependency only; it never ships to the browser.
-- If analytics are added later, use a cookieless option that needs no consent banner.
+- Ships zero client-side JavaScript beyond the booking embed and Microsoft Clarity (analytics). No animation libraries, sliders, or other analytics tools. Eleventy's job is finished at build time; nothing it does should add a runtime script beyond those two.
+- Microsoft Clarity is loaded on every page, by explicit request, even though it sets cookies for session replay and heatmaps. That's a deliberate exception to the site's general no-cookies posture, made knowingly, without a consent banner. Don't add a banner speculatively and don't treat this as license to add other tracking without the same explicit ask.
+- Beyond Clarity's cookies, no localStorage, sessionStorage, or other cookies. Nothing else that would require a consent banner.
+- External dependencies are Google Fonts, the booking embed, and Microsoft Clarity. That is the whole list of things a visitor's browser talks to. `@11ty/eleventy` is a dev-time dependency only; it never ships to the browser.
 - Build: `npm run build` outputs static files to `_site/`. `npm run dev` serves it locally with live reload. There is no other build step and no server at runtime; Vercel serves what Eleventy generates, nothing more.
 
 ---
