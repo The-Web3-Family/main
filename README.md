@@ -20,10 +20,7 @@ src/
   articles/
     index.njk       the /articles/ listing page
     *.md            one file per published article
-  case-studies/
-    the-founder.njk    one hand-written page per client, not a collection
-    the-mentor.njk
-    the-inventor.njk
+  proof.njk         one long page, three stacked client stories
   christopher.jpg   the portrait
   styles.css        the one stylesheet every page shares
   favicon.svg
@@ -69,15 +66,20 @@ Markdown, done. It shows up on `/articles/` and builds automatically. Nothing
 currently links to `/articles/` itself, so it's reachable by direct URL only,
 on purpose, until there's a decision about how visitors should find it.
 
-## Adding a case study
+## Adding a client story to Proof
 
-Case studies aren't a collection like articles; each one is a hand-written
-page under `src/case-studies/`. Copy the closest existing one as a starting
-point and reuse the `.prose`, `.log-*`, and `.case-meta` classes already in
-`src/styles.css` rather than inventing new ones. Names stay off the page
-until the client signs off in writing; when they do, add their name and
-photo to the existing page rather than creating a new one. Link the new
-page from the homepage's Proof section (`src/index.njk`).
+Proof is one page, `src/proof.njk`, not a collection like articles. Each
+client is a stacked card: an intro, a `.case-facts` strip, a `.stat-row` of
+real numbers, a two-column `.split` (questions vs. what landed), the
+client's quotes, a "what this proves" block, and a weekly log. Copy the
+closest existing card as a starting point and reuse the `.prose`, `.log-*`,
+`.case-facts`, `.stat-row`, `.split`, and `.promise` classes already in
+`src/styles.css` rather than inventing new ones. Numbers in the stat row
+must be real, already-verified facts, set in rust (never orange: orange
+text fails contrast on this page). Names stay off until the client signs
+off in writing; when they do, add their name and photo to the existing
+card rather than creating a new page. Link the new card's anchor from the
+homepage's Proof section (`src/index.njk`).
 
 ## Deploying
 
@@ -102,6 +104,6 @@ None. The portrait (`src/christopher.jpg`), the phone number
 (310-703-6003), the email (christopher@theweb3family.com), and the booking
 panel (a real Calendly inline embed in `src/index.njk`) are all real.
 
-The homepage's Proof section links to three real, anonymized case studies
-under `src/case-studies/`. Names stay off all four pages until each client
+The homepage's Proof section links to three real, anonymized client stories
+on `/proof/` (`src/proof.njk`). Names stay off both pages until each client
 signs off in writing; that's a deliberate policy, not a placeholder.

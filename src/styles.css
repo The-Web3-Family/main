@@ -268,6 +268,26 @@ details.log-more summary:focus-visible{outline:3px solid var(--orange);outline-o
 
 .log-next{font-size:18px;color:var(--muted);font-style:italic;margin:22px 0 0}
 
+/* real numbers pulled out and set large, rust (not orange: orange on
+   cream fails contrast, rust is the site's existing numeral color) */
+.stat-row{display:flex;flex-wrap:wrap;gap:28px 40px;margin:28px 0 4px}
+.stat-num{
+  display:block;font-family:'Lora',serif;font-weight:700;line-height:1;
+  font-size:clamp(34px,7vw,48px);color:var(--rust);
+}
+.stat-label{display:block;font-size:18px;color:var(--muted);margin-top:2px;max-width:16ch}
+
+/* "sound familiar?" questions, muted, inside the narrow split column */
+.proof-questions{color:var(--muted)}
+
+/* plain in-page jump list, not a sticky nav, just a printed table of contents */
+.toc{display:flex;flex-direction:column;gap:10px;margin:26px 0 0;padding:0;list-style:none}
+.toc a{font-size:20px;font-weight:700}
+
+@media (min-width:760px){
+  .toc{flex-direction:row;gap:32px;flex-wrap:wrap}
+}
+
 @media (min-width:760px){
   .case-facts{flex-direction:row;gap:0}
   .case-facts>div{flex:1;padding:0 28px}
