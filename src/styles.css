@@ -142,6 +142,9 @@ p.figure{
 .card p{margin:0}
 a.card{display:block;text-decoration:none}
 a.card:hover{border-top-color:var(--rust)}
+.card p.card-stat{margin:8px 0}
+.card-stat-num{font-family:'Lora',serif;font-weight:700;color:var(--rust);font-size:22px;margin-right:8px}
+.card-stat-label{font-size:18px;color:var(--muted)}
 
 /* ---------- faq ---------- */
 .faq-list{display:flex;flex-direction:column}
