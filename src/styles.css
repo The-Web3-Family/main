@@ -218,7 +218,6 @@ footer p:last-child{margin-bottom:0}
 .prose li{margin-bottom:.4em}
 .prose blockquote{margin:0 0 1.15rem;padding-left:20px;border-left:3px solid var(--forest);color:var(--muted)}
 .content-cta{margin:40px 0 32px}
-.content-cta-lead{margin-top:0}
 .content-cta .call-alt{text-align:center;margin:0 0 6px}
 .content-cta .risk-reversal{font-size:18px;color:var(--muted);text-align:center;margin:0}
 
