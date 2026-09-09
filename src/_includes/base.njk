@@ -21,22 +21,35 @@
      around. No consent banner was added alongside it. See CLAUDE.md
      section 9 for the accepted tradeoff.
 
-  PROOF
+  CASE STUDIES
 
-     src/proof.njk is one long page, three stacked client stories
-     (#mission, #wisdom, #character), built from Christopher's own
-     weekly delivery logs. The homepage's Proof section links to each
-     anchor by name. Names stay off both pages until each client signs
-     off in writing, per the anonymization policy set in the source
-     drafts, not because anything is a placeholder. When a client does
-     sign off, add their name and photo to their existing card rather
-     than starting a new page. Don't add a fourth story or any detail
-     not already in the delivery logs.
+     src/case-studies/ is an index page plus one full page per client,
+     built from Christopher's own weekly delivery logs. All three
+     clients gave written permission to be named, so every page uses
+     real names, organizations, and quotes: Arthur Flatto (Love Aid
+     Foundation), Howard Eley (Ask G-Pop), and Anthony Taylor (Rap
+     Frogs). This replaced the earlier anonymous "#mission / #wisdom /
+     #character" single-page version at /proof/, which no longer
+     exists; that URL now redirects to /case-studies/ (see
+     vercel.json). A fragment-specific redirect straight to each old
+     anchor's new page isn't possible without JavaScript, since a URL
+     fragment never reaches the server, so anyone with an old
+     /proof/#anchor link lands on the index and picks the right card
+     from there.
 
-     Each card uses real, already-verified numbers (weeks running,
+     Not every quote is published. Two quotes originally shown on the
+     Ask G-Pop card turned out to be from Howard's team, not Howard,
+     so they were pulled rather than misattributed; that card carries
+     a "Quote pending" note instead, matching Rap Frogs (whose client
+     hasn't given a quote yet either). Don't attribute a quote to
+     someone who didn't say it, and don't add a name anywhere without
+     Christopher confirming that specific person is covered by the
+     organization's written okay.
+
+     Each page uses real, already-verified numbers (weeks running,
      count of delivered items, and similar) set large in rust, never
      orange: orange text fails contrast on the cream and band grounds
-     this page uses. Do not invent a number to fill out a stat row.
+     these pages use. Do not invent a number to fill out a stat row.
 
   DESIGN NOTES, so nothing gets flattened by accident
 
