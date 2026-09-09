@@ -89,9 +89,9 @@ contrast on these pages).
 Every name, organization, and quote must be real and covered by that
 specific person's written permission, confirmed with Christopher before
 publishing, not assumed from a broader organization-level okay. If a
-quote doesn't exist yet, or turns out to be misattributed, use the
-existing "Quote pending" treatment rather than leaving a gap or guessing.
-Link the new page from both `src/case-studies/index.njk` and the
+quote doesn't exist yet, or turns out to be misattributed, leave the
+quote block out entirely rather than guessing or adding a placeholder
+note. Link the new page from both `src/case-studies/index.njk` and the
 homepage's Case studies section (`src/index.njk`).
 
 ## Deploying
