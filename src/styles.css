@@ -140,11 +140,13 @@ p.figure{
 .cards{display:grid;grid-template-columns:1fr;gap:18px;margin-top:30px}
 .card{background:var(--cream);border:1px solid var(--hair);border-top:4px solid var(--orange);padding:22px}
 .card p{margin:0}
-a.card{display:block;text-decoration:none}
-a.card:hover{border-top-color:var(--rust)}
+a.card{display:block;text-decoration:none;transition:transform .2s ease-out,box-shadow .2s ease-out}
+a.card:hover{border-top-color:var(--rust);transform:translateY(-4px);box-shadow:0 8px 0 rgba(24,28,27,.16)}
 .card p.card-stat{margin:8px 0}
 .card-stat-num{font-family:'Lora',serif;font-weight:700;color:var(--rust);font-size:22px;margin-right:8px}
 .card-stat-label{font-size:18px;color:var(--muted)}
+.card-arrow{display:inline-block;transition:transform .2s ease-out}
+a.card:hover .card-arrow{transform:translateX(4px)}
 
 /* ---------- faq ---------- */
 .faq-list{display:flex;flex-direction:column}
@@ -199,7 +201,7 @@ footer p:last-child{margin-bottom:0}
   .steps{display:grid;grid-template-columns:1fr 1fr;gap:36px 56px}
   .step-num{font-size:52px;width:66px}
 
-  .cards{grid-template-columns:1fr 1fr;gap:22px}
+  .cards{grid-template-columns:1fr 1fr 1fr;gap:22px}
   .card{padding:28px}
 
   .faq-list{max-width:900px}
@@ -214,7 +216,16 @@ footer p:last-child{margin-bottom:0}
 .prose ul,.prose ol{margin:0 0 1.15rem;padding-left:1.4em;max-width:62ch}
 .prose li{margin-bottom:.4em}
 .prose blockquote{margin:0 0 1.15rem;padding-left:20px;border-left:3px solid var(--forest);color:var(--muted)}
-.content-cta{margin-top:40px}
+.content-cta{margin:40px 0 32px}
+.content-cta-lead{margin-top:0}
+.content-cta .call-alt{text-align:center;margin:0 0 6px}
+.content-cta .risk-reversal{font-size:18px;color:var(--muted);text-align:center;margin:0}
+
+/* short human aside above a closing CTA: the homepage portrait, reused
+   smaller, next to a first-person line in Christopher's own voice */
+.author-note{display:flex;align-items:center;gap:16px;margin:32px 0 0}
+.author-note p{margin:0;font-size:20px}
+.portrait-sm{width:64px;height:64px;border-width:2px}
 
 /* ---------- articles ---------- */
 .article-date{font-size:18px;color:var(--muted);margin:0 0 8px}
@@ -274,11 +285,14 @@ footer p:last-child{margin-bottom:0}
 details.log-more{margin:0 0 4px}
 details.log-more summary{
   cursor:pointer;font-weight:700;color:var(--forest);padding:14px 0;
-  list-style:none;font-size:18px;
+  list-style:none;font-size:18px;display:flex;align-items:center;gap:8px;
 }
 details.log-more summary::-webkit-details-marker{display:none}
-details.log-more summary::before{content:"+ ";color:var(--rust)}
-details.log-more[open] summary::before{content:"– "}
+details.log-more summary::before{
+  content:"\25B8";color:var(--rust);display:inline-block;
+  transition:transform .2s ease-out;
+}
+details.log-more[open] summary::before{transform:rotate(90deg)}
 details.log-more summary:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 
 .log-next{font-size:18px;color:var(--muted);font-style:italic;margin:22px 0 0}

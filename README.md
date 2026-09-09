@@ -72,19 +72,27 @@ on purpose, until there's a decision about how visitors should find it.
 
 ## Adding a case study
 
-Case studies live at `src/case-studies/`: `index.njk` (short cards) plus
-one full page per client, not a collection like articles. Each full page:
-a breadcrumb, an eyebrow reading `Person · Organization`, the serif
-headline, a `.case-facts` strip, a `.stat-row` of real numbers, a
-two-column `.split` (questions vs. what landed), the client's quotes with
-a `<cite>` attribution under each, a "what this proves" block, a weekly
-log, the booking CTA, and a closing list of links to the other case
-studies. Copy the closest existing page as a starting point and reuse the
-`.prose`, `.log-*`, `.case-facts`, `.stat-row`, `.split`, `.promise`,
-`.breadcrumb`, and `.case-crosslinks` classes already in `src/styles.css`
-rather than inventing new ones. Numbers in the stat row must be real,
-already-verified facts, set in rust (never orange: orange text fails
-contrast on these pages).
+Case studies live at `src/case-studies/`: `index.njk` (short cards, page
+heading "The work so far") plus one full page per client, not a
+collection like articles. Each full page: a breadcrumb, an eyebrow
+reading `Person · Organization`, the serif headline, a `.case-facts`
+strip (client type, client since), a `.stat-row` of real numbers, a
+two-column `.split` (questions vs. what landed), a CTA, the client's
+quotes with a `<cite>` attribution under each when a real quote exists,
+a "what this proves" block, a second CTA, a weekly log collapsed behind
+one closed-by-default `<details>`, a short first-person note from
+Christopher next to the reused homepage portrait, a third closing CTA,
+and a closing list of links to the other case studies. Every CTA carries
+the button, `or call 310-703-6003`, and the same risk-reversal line
+("Month to month. One email ends it. Everything built stays yours.").
+Tenure reads as "Client since [Month Year]" everywhere except the
+weekly log's own status line, which is the only place a week count
+appears. Copy the closest existing page as a starting point and reuse
+the `.prose`, `.log-*`, `.case-facts`, `.stat-row`, `.split`, `.promise`,
+`.breadcrumb`, `.author-note`, and `.case-crosslinks` classes already in
+`src/styles.css` rather than inventing new ones. Numbers in the stat row
+must be real, already-verified facts, set in rust (never orange: orange
+text fails contrast on these pages).
 
 Every name, organization, and quote must be real and covered by that
 specific person's written permission, confirmed with Christopher before
