@@ -279,14 +279,18 @@ footer p:last-child{margin-bottom:0}
    JavaScript: overflow-x:auto is the whole mechanism, so it still works
    with JS off and is reachable by keyboard (tabindex + arrow/scroll). */
 .log-timeline-scroll{
-  overflow-x:auto;margin:0 0 4px;padding:4px 4px 18px;
+  overflow-x:auto;margin:0 0 4px;padding:4px 4px 10px;
   scrollbar-width:thin;scrollbar-color:var(--muted) var(--hair);
 }
 .log-timeline-scroll:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 .log-timeline-scroll::-webkit-scrollbar{height:8px}
 .log-timeline-scroll::-webkit-scrollbar-track{background:var(--hair);border-radius:4px}
 .log-timeline-scroll::-webkit-scrollbar-thumb{background:var(--muted);border-radius:4px}
-.log-timeline{list-style:none;margin:0;padding:0;display:flex;gap:28px;position:relative}
+/* width:max-content is the fix here: a block-level flex container otherwise
+   sizes to its scroll parent's visible width, not its overflowing children,
+   which left the connecting line stopping partway through the log instead
+   of running the full length of every week */
+.log-timeline{list-style:none;margin:0;padding:0;display:flex;gap:28px;position:relative;width:max-content}
 .log-timeline::before{content:"";position:absolute;left:0;right:0;top:58px;height:1px;background:var(--hair)}
 .log-timeline-item{flex:0 0 210px;display:flex;flex-direction:column}
 .log-timeline-month{
