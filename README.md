@@ -20,6 +20,12 @@ src/
   articles/
     index.njk       the /articles/ listing page
     *.md            one file per published article
+  case-studies/
+    index.njk       the /case-studies/ listing page, three short cards
+    love-aid-foundation.njk   full case study, Arthur Flatto
+    ask-g-pop.njk             full case study, Howard Eley
+    rap-frogs.njk             full case study, Anthony Taylor
+  christopher.jpg   the portrait
   styles.css        the one stylesheet every page shares
   favicon.svg
   favicon.ico
@@ -64,6 +70,38 @@ Markdown, done. It shows up on `/articles/` and builds automatically. Nothing
 currently links to `/articles/` itself, so it's reachable by direct URL only,
 on purpose, until there's a decision about how visitors should find it.
 
+## Adding a case study
+
+Case studies live at `src/case-studies/`: `index.njk` (short cards, page
+heading "The work so far") plus one full page per client, not a
+collection like articles. Each full page: a breadcrumb, an eyebrow
+reading `Person · Organization`, the serif headline, a `.case-facts`
+strip (client type, client since), a `.stat-row` of real numbers, a
+two-column `.split` (questions vs. what landed), a CTA, the client's
+quotes with a `<cite>` attribution under each when a real quote exists,
+a "what this proves" block, a second CTA, a weekly log collapsed behind
+one closed-by-default `<details>`, a short first-person note from
+Christopher next to the reused homepage portrait, a third closing CTA,
+and a closing list of links to the other case studies. Every CTA carries
+the button, `or call 310-703-6003`, and the same risk-reversal line
+("Month to month. One email ends it. Everything built stays yours.").
+Tenure reads as "Client since [Month Year]" everywhere except the
+weekly log's own status line, which is the only place a week count
+appears. Copy the closest existing page as a starting point and reuse
+the `.prose`, `.log-*`, `.case-facts`, `.stat-row`, `.split`, `.promise`,
+`.breadcrumb`, `.author-note`, and `.case-crosslinks` classes already in
+`src/styles.css` rather than inventing new ones. Numbers in the stat row
+must be real, already-verified facts, set in rust (never orange: orange
+text fails contrast on these pages).
+
+Every name, organization, and quote must be real and covered by that
+specific person's written permission, confirmed with Christopher before
+publishing, not assumed from a broader organization-level okay. If a
+quote doesn't exist yet, or turns out to be misattributed, leave the
+quote block out entirely rather than guessing or adding a placeholder
+note. Link the new page from both `src/case-studies/index.njk` and the
+homepage's Case studies section (`src/index.njk`).
+
 ## Deploying
 
 Vercel builds from `main` automatically: `npm run build`, output directory `_site`.
@@ -78,7 +116,7 @@ Confirm every time:
 1. Reads cleanly at 375px width.
 2. All text is 18px or larger.
 3. Every color pair meets the ratios in CLAUDE.md section 6.
-4. A 68-year-old would understand every word.
+4. An 87-year-old would understand every word.
 5. Each page still has exactly one goal and one action.
 
 ## Open slots
@@ -87,7 +125,10 @@ None. The portrait (`src/christopher.jpg`), the phone number
 (310-703-6003), the email (christopher@theweb3family.com), and the booking
 panel (a real Calendly inline embed in `src/index.njk`) are all real.
 
-There's no Proof section on the homepage right now; it was removed rather
-than left as a placeholder, since there's no real testimonial yet. Add it
-back only once there's a real one: full name, organization, photo, one
-specific thing that changed, and written permission.
+The homepage's Case studies section links to three real, named clients
+under `/case-studies/`: Arthur Flatto (Love Aid Foundation), Howard Eley
+(Ask G-Pop), and Anthony Taylor (Rap Frogs). All three gave written
+permission to be named. `/proof/`, the earlier anonymous single-page
+version, now redirects to `/case-studies/` (see `vercel.json`); a
+fragment-specific redirect to each old anchor's new page isn't possible
+without JavaScript, since URL fragments never reach the server.

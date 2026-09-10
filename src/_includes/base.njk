@@ -21,13 +21,36 @@
      around. No consent banner was added alongside it. See CLAUDE.md
      section 9 for the accepted tradeoff.
 
-  WHAT IS DELIBERATELY MISSING
+  CASE STUDIES
 
-     The proof section on the homepage names itself and says nothing more
-     yet, on purpose. It fills in only with a real testimonial: full name,
-     organization, photograph, one specific thing that changed, and
-     written permission. Do not replace that placeholder line with
-     generic praise or an invented case study.
+     src/case-studies/ is an index page plus one full page per client,
+     built from Christopher's own weekly delivery logs. All three
+     clients gave written permission to be named, so every page uses
+     real names, organizations, and quotes: Arthur Flatto (Love Aid
+     Foundation), Howard Eley (Ask G-Pop), and Anthony Taylor (Rap
+     Frogs). This replaced the earlier anonymous "#mission / #wisdom /
+     #character" single-page version at /proof/, which no longer
+     exists; that URL now redirects to /case-studies/ (see
+     vercel.json). A fragment-specific redirect straight to each old
+     anchor's new page isn't possible without JavaScript, since a URL
+     fragment never reaches the server, so anyone with an old
+     /proof/#anchor link lands on the index and picks the right card
+     from there.
+
+     Not every quote is published. Two quotes originally shown on the
+     Ask G-Pop card turned out to be from Howard's team, not Howard,
+     so they were pulled rather than misattributed. Neither that page
+     nor Rap Frogs (whose client hasn't given a quote yet either)
+     shows a quote section right now; the pull-quote block is simply
+     left out rather than filled with a placeholder note. Don't
+     attribute a quote to someone who didn't say it, and don't add a
+     name anywhere without Christopher confirming that specific
+     person is covered by the organization's written okay.
+
+     Each page uses real, already-verified numbers (weeks running,
+     count of delivered items, and similar) set large in rust, never
+     orange: orange text fails contrast on the cream and band grounds
+     these pages use. Do not invent a number to fill out a stat row.
 
   DESIGN NOTES, so nothing gets flattened by accident
 
@@ -102,6 +125,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
+{% if calendlyPopup %}
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+{% endif %}
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -112,15 +139,15 @@
 </head>
 <body>
 
-<!-- HEADER. No navigation by design. Do not add links here. -->
+<!-- HEADER. Logo only, no separate nav. The logo itself links home. -->
 <header>
-  <div class="wrap brand">
+  <a class="wrap brand" href="/">
     <div class="mark">CC</div>
     <div>
       <b>Christopher Clarke</b>
       <span>The Web3 Family</span>
     </div>
-  </div>
+  </a>
 </header>
 
 <main>
