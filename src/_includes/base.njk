@@ -11,11 +11,12 @@
   .eleventy.js. The phone number is real: 310-703-6003, appearing in
   the hero, the last action section, and the footer below. The footer
   also carries the real email, christopher@theweb3family.com. Every
-  "Book my 15 minute call" button on the site, including the last
-  action section in src/index.njk and the footer below, opens
-  Calendly's real popup scheduler. Calendly's popup widget assets load
-  in <head> on every page, since the footer's own booking button needs
-  them everywhere the footer appears.
+  "Book my meeting with you." button on the site, including the last
+  action section in src/index.njk and the footer below, shares one
+  macro (src/_includes/cta.njk) and opens Calendly's real popup
+  scheduler. Calendly's popup widget assets load in <head> on every
+  page, since the footer's own booking button needs them everywhere
+  the footer appears.
 
   ANALYTICS
      Microsoft Clarity is loaded in <head> above, on every page. This
@@ -117,6 +118,7 @@
 
 =============================================================================
 -->
+{% from "cta.njk" import button %}
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -165,12 +167,7 @@
       <p class="footer-line"><a href="tel:+13107036003">310-703-6003</a></p>
       <p class="footer-line"><a href="mailto:christopher@theweb3family.com">christopher@theweb3family.com</a></p>
     </div>
-    <div class="footer-cta actions">
-      <a class="cta" href="https://calendly.com/aweb3dad/15-minute-greeting" onclick="Calendly.initPopupWidget({url:'https://calendly.com/aweb3dad/15-minute-greeting'});return false;">
-        <span>Book my 15 minute call</span>
-      </a>
-      <p class="call-alt">or call <a href="tel:+13107036003">310-703-6003</a></p>
-    </div>
+    {{ button("footer-cta actions") }}
   </div>
 </footer>
 

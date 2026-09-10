@@ -3,6 +3,7 @@ layout: base.njk
 title: Ask G-Pop | The Web3 Family
 description: A youth program, an app, and a ten-track album, built one Friday at a time. 25 weeks running.
 ---
+{% from "cta.njk" import button %}
 <!-- INTRO -->
 <section>
   <div class="wrap">
@@ -50,13 +51,7 @@ description: A youth program, an app, and a ten-track album, built one Friday at
       </div>
     </div>
 
-    <div class="content-cta">
-      <a class="cta" href="https://calendly.com/aweb3dad/15-minute-greeting" onclick="Calendly.initPopupWidget({url:'https://calendly.com/aweb3dad/15-minute-greeting'});return false;">
-        <span>Book my 15 minute call</span>
-      </a>
-      <p class="call-alt">or call <a href="tel:+13107036003">310-703-6003</a></p>
-      <p class="risk-reversal">Month to month. Everything built is yours.</p>
-    </div>
+    {{ button("content-cta", true) }}
   </div>
 </section>
 
