@@ -177,7 +177,7 @@ footer p:last-child{margin-bottom:0}
 @media (min-width:760px){
   .wrap{max-width:1000px;padding:0 48px}
   section{padding:calc(var(--gap) * 1.15) 0}
-  h2{font-size:clamp(34px,3.2vw,38px)}
+  h2,.crosslinks-heading{font-size:clamp(34px,3.2vw,38px)}
 
   .split{display:grid;grid-template-columns:1fr 1.5fr;gap:56px;align-items:start}
   .split.split-swapped{grid-template-columns:1.5fr 1fr}
@@ -214,7 +214,7 @@ footer p:last-child{margin-bottom:0}
 /* ---------- prose, shared by articles and case studies ---------- */
 .prose h1{margin-bottom:24px}
 .prose :where(h2,h3){margin-top:1.6em}
-.prose ul,.prose ol{margin:0 0 1.15rem;padding-left:1.4em;max-width:62ch}
+.prose ul:not(.promise),.prose ol{margin:0 0 1.15rem;padding-left:1.4em;max-width:62ch}
 .prose li{margin-bottom:.4em}
 .prose blockquote{margin:0 0 1.15rem;padding-left:20px;border-left:3px solid var(--forest);color:var(--muted)}
 .content-cta{max-width:420px;margin:40px auto 32px;text-align:center}
@@ -268,6 +268,9 @@ footer p:last-child{margin-bottom:0}
 .breadcrumb{font-size:18px;color:var(--muted);margin:0 0 20px}
 
 /* closing cross-links to the other case studies */
+/* sized like h2 (a real heading, not a footnote), kept as an h3 tag since
+   the rest of a case study page runs h1 straight to h3 with no h2 level */
+.crosslinks-heading{font-size:clamp(29px,6vw,38px);font-weight:600;line-height:1.18;letter-spacing:-.01em;margin-bottom:14px}
 .case-crosslinks{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:14px}
 .case-crosslinks a{font-size:20px;font-weight:700}
 
