@@ -18,6 +18,17 @@
   page, since the footer's own booking button needs them everywhere
   the footer appears.
 
+  HEADER NAVIGATION
+     The header used to be logo-only. Christopher asked directly for a
+     hamburger menu (case studies, articles, book a meeting), so the
+     site no longer has "nothing to click but the phone number and the
+     one call to action" as an absolute rule; treat the header nav as
+     settled, but still don't add navigation links anywhere else (a
+     page footer, inline in body copy) without asking first. The menu
+     itself is a <details>/<summary> disclosure, the same JS-free
+     pattern the case study pages already used for their weekly log,
+     so it stays inside the site's zero-client-JS rule.
+
   ANALYTICS
      Microsoft Clarity is loaded in <head> above, on every page. This
      was an explicit request, made knowing Clarity sets cookies for
@@ -110,11 +121,11 @@
      write the page's own sections below the front matter using the same
      rhythm as index.njk: a <section> with a top border (or class="band"
      for the alternate ground), a .wrap container, and either .split
-     prose or a .cards grid. The header and footer above come along
-     automatically. Do not add navigation links in the header for the new
-     page. That decision needs an explicit conversation first, since the
-     whole site was built around having nothing to click but the phone
-     number and the one call to action.
+     prose or a .cards grid. The header, footer, and hamburger menu above
+     come along automatically. Do not add the new page into the
+     hamburger menu itself without asking first: its three links (case
+     studies, articles, book a meeting) were Christopher's own explicit
+     list, not a general "add every page" rule.
 
 =============================================================================
 -->
@@ -143,15 +154,32 @@
 </head>
 <body>
 
-<!-- HEADER. Logo only, no separate nav. The logo itself links home. -->
+<!-- HEADER. The logo still links home. A hamburger menu (case studies,
+     articles, book a meeting) sits next to it now, per Christopher's
+     direct request. Built with <details>/<summary>, the same zero-JS
+     disclosure pattern the case study pages already used for their
+     weekly log, so it opens and closes without any client-side
+     JavaScript. -->
 <header>
-  <a class="wrap brand" href="/">
-    <div class="mark">CC</div>
-    <div>
-      <b>Christopher Clarke</b>
-      <span>The Web3 Family</span>
-    </div>
-  </a>
+  <div class="wrap header-row">
+    <a class="brand" href="/">
+      <div class="mark">CC</div>
+      <div>
+        <b>Christopher Clarke</b>
+        <span>The Web3 Family</span>
+      </div>
+    </a>
+    <details class="nav-menu">
+      <summary class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </summary>
+      <nav class="nav-panel" aria-label="Site">
+        <a href="/case-studies/">Case studies</a>
+        <a href="/articles/">Articles</a>
+        <a href="https://calendly.com/aweb3dad/15-minute-greeting" onclick="Calendly.initPopupWidget({url:'https://calendly.com/aweb3dad/15-minute-greeting'});return false;">Book my meeting with you.</a>
+      </nav>
+    </details>
+  </div>
 </header>
 
 <main>
