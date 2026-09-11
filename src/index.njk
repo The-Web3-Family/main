@@ -1,8 +1,9 @@
 ---
 layout: base.njk
-title: The Web3 Family | You’re the one with the ideas, I make them exist
+title: The Web3 Family | You’re the one with the mission, I make them exist
 description: Christopher Clarke works with people who started a nonprofit after a full career in something else. You talk, I build. Something lands every Friday. $3,000 a month, two hours a week.
 ---
+{% from "cta.njk" import button %}
 <!-- HERO -->
 <div class="hero">
   <div class="wrap">
@@ -14,19 +15,14 @@ description: Christopher Clarke works with people who started a nonprofit after 
       </div>
     </div>
 
-    <h1>You’re the one with the ideas.<br>I’m the one who makes them exist.</h1>
+    <h1>You’re the one with the mission.<br>I’m the one who makes them exist.</h1>
 
-    <p class="subhead">I work with people who started a nonprofit after a full career in something else. You talk, I build, and every Friday something lands that you can hand to somebody.</p>
+    <p class="subhead">I just make sure that every Friday you see the mission moving forward.</p>
 
-    <p><strong>$<span class="fig-lining">3,000</span> a month. Two hours a week. Month to month.</strong></p>
+    <p><strong>$<span class="fig-lining">3000</span>/month. Two hours a week.</strong></p>
 
-    <div class="actions">
-      <a class="cta" href="#booking">
-        <span>Book my 15 minute call</span>
-      </a>
-      <p class="call-alt">or call <a href="tel:+13107036003">310-703-6003</a></p>
-    </div>
-    <p class="reassure">Work has landed every Friday since March. Slow weeks included.</p>
+    {{ button() }}
+    <p class="reassure">Month to month, Cancel anytime.</p>
   </div>
 </div>
 
@@ -35,13 +31,13 @@ description: Christopher Clarke works with people who started a nonprofit after 
   <div class="wrap">
     <div class="split">
       <div class="split-label">
-        <span class="eyebrow">The problem</span>
-        <h2>The ideas keep coming.</h2>
+        <span class="eyebrow">The Problem:</span>
+        <h2>Your ideas keep coming.</h2>
       </div>
       <div class="split-body">
-        <p>You spent a lifetime becoming the person other people ask. The philosophy, the catalog, the curriculum, the thing that took a lifetime to learn.</p>
-        <p>And it keeps coming. A song idea at eleven at night. A framework you could teach in your sleep. A closet full of photographs.</p>
-        <p style="margin-bottom:0">Most of it lives in your head, in your voice, on index cards. You want it out where a stranger can find it.</p>
+        <p>You’ve spent a lifetime preparing to bring your vision to life.</p>
+        <p>You already know the audience.</p>
+        <p style="margin-bottom:0">You’re just missing one piece.</p>
       </div>
     </div>
   </div>
@@ -168,18 +164,7 @@ description: Christopher Clarke works with people who started a nonprofit after 
     <h2>Fifteen minutes on the phone, and you decide from there.</h2>
 
     <div class="booking-wrap">
-      <div class="panel">
-        <div class="panel-head">Book my 15 minute call</div>
-        <div class="panel-body panel-body-embed">
-          <div class="calendly-inline-widget" data-url="https://calendly.com/aweb3dad/15-minute-greeting" style="min-width:320px;height:700px;"></div>
-          <noscript>
-            <p style="padding:26px">Turn on JavaScript to see the calendar here, or <a href="https://calendly.com/aweb3dad/15-minute-greeting">open the scheduling page directly</a>.</p>
-          </noscript>
-        </div>
-      </div>
-      <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
-      <a class="tel" style="display:flex;width:100%" href="tel:+13107036003">Call 310-703-6003</a>
+      {{ button() }}
     </div>
   </div>
 </section>
